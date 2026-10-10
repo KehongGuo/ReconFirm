@@ -1,8 +1,8 @@
-# Table I: 50 missions in 10 held-out Matterport3D buildings, every condition, twice (results are the mean of passes).
+# Table I: 50 missions in 10 held-out Matterport3D buildings, 300 s each, every condition, twice (mean of the passes).
 base: default.yaml
 experiment: mp3d_table
 dataset: mp3d
 episodes: data/episodes/team_episodes_v2_test.json
 conditions: [ours, frontier_rules, vlm_direct, wo_gates, wo_semantic_scheduler, gates_legged_only, gates_drones_only, latency_free]
 passes: 2
-mission_s: 150
+mission_s: 300
