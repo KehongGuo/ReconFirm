@@ -1,0 +1,11 @@
+# Simulation and agents (Python 3.9). habitat-sim 0.3.3 comes from conda:
+#   conda install -c aihabitat -c conda-forge habitat-sim=0.3.3 withbullet headless
+numpy==1.26.4
+scipy==1.13.1
+numpy-quaternion==2023.0.4
+pillow==10.4.0
+imageio==2.37.0
+requests
+pyyaml
+torch==2.8.0
+transformers==4.57.6      # Grounding DINO and SAM (downloaded from the Hugging Face hub on first use)

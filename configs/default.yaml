@@ -1,0 +1,40 @@
+# Every setting run.py understands, with its default. An experiment config names `base: default.yaml` and overrides
+# what it changes; any key can also be overridden on the command line:  python run.py -c configs/x.yaml mission_s=300
+
+experiment: debug              # outputs go to out/<experiment>/ (out/<experiment>/p<k>/ when passes > 1)
+dataset: mp3d                  # mp3d: team_run.py as is; hm3d: the ObjectNav wrapper (benchmark agent, naming
+                               #       standard, scoring at 0.1 m / 0.12 m from goal view points)
+episodes: data/episodes/team_episodes_v2_test.json
+episode_ids: all               # all, or a list of episode ids ("<scene>:<id>")
+conditions: [ours]             # names from configs/conditions.yaml
+passes: 1                      # repeat the whole set; table.py averages the passes
+
+mission_s: 150                 # mission horizon (s); model latency is charged to it unless the condition says free
+scheduler: hybrid              # hybrid: the VLM ranks and proposes, assignment routes (the paper's scheduler)
+localize: mask                 # mask: place target detections by their SAM mask; box: by the box's foreground depth
+video: false                   # write an mp4 of every mission
+
+memory:                        # case memory (team_experience_v3): checks a declaration against similar past outcomes
+  store: null                  # path to a store; null = no memory
+  learn: false                 # practice runs only: add each mission's declaration to the store
+verifier:
+  model: null                  # served model name of an evolved verifier (a LoRA beside the base); null = the base
+save_crops: false              # practice runs: save every verifier crop, its answer and its annotation (training data)
+
+data:                          # where the datasets live (exported as SCOUT_* environment variables)
+  mp3d_root: data/scene_datasets            # contains mp3d*/ with the scene dataset config
+  hm3d_root: data/scene_datasets/hm3d       # HM3D v0.2 with semantics
+  objectnav_root: data/datasets/objectnav/hm3d/objectnav_hm3d_v2   # contains val/ and train/
+
+vlm:
+  url: http://localhost:8010   # OpenAI-compatible server (scripts/serve_vllm.sh) for the scheduler and the verifier
+  model: qwen3vl
+judge:
+  key_file: null               # TypeSafe credential file; or export TYPESAFE_API_KEY
+  log: null                    # append one line per judge request (tokens, latency) to this file
+  pin_addrs: null              # comma-separated IPv4 addresses for api.typesafe.ai (broken DNS or stalling IPv6)
+
+retries:
+  crash: 2                     # attempts per mission that crashed (e.g. out of GPU memory)
+  service_error: 5             # attempts per mission whose model calls failed; 3 such missions in a row stop the run
+gpu: null                      # CUDA_VISIBLE_DEVICES for the simulator, detector and SAM (the VLM is a separate server)

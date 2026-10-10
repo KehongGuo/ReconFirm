@@ -1,0 +1,9 @@
+# Self-evolution practice round: search one HM3D train fold, learn the case memory, save every verifier crop.
+# Folds: R1/R2/R3 learning (one per round), B (memory veto gate), C (practice fold: scores every round).
+base: default.yaml
+experiment: practice_R1
+dataset: hm3d
+episodes: data/episodes/team_episodes_hm3d_train_R1.json
+conditions: [ours]
+memory: {store: memory/store.json, learn: true}
+save_crops: true

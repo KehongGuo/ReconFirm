@@ -1,0 +1,10 @@
+out/
+memory/
+adapters/
+data/scene_datasets/
+data/datasets/
+data/pope/
+__pycache__/
+*.pyc
+*.key
+.env

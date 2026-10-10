@@ -1,0 +1,10 @@
+# Verifier self-evolution: QLoRA DPO training (a separate environment, Python 3.11)
+torch==2.13.0
+transformers==5.17.0
+peft==0.21.2
+trl==1.14.2
+bitsandbytes==0.50.2
+datasets==5.1.0
+accelerate==1.15.0
+pillow
+requests

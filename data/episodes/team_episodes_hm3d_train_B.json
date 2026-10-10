@@ -1,0 +1,551 @@
+{
+ "source": "objectnav_hm3d_v2 train",
+ "episodes": [
+  {
+   "scene": "1S7LAXRdDqK",
+   "seed": 8333,
+   "target": "chair",
+   "floor_y": 0.0416,
+   "start": [
+    -4.47613,
+    0.0416,
+    -6.04149
+   ],
+   "start_yaw": 0.8082840527763547,
+   "shortest_geodesic_m": 6.25857,
+   "episode_id": "1S7LAXRdDqK:8333",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/1S7LAXRdDqK.json.gz",
+    "key": "1S7LAXRdDqK.basis.glb_chair"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "1S7LAXRdDqK",
+   "seed": 16666,
+   "target": "sofa",
+   "floor_y": 0.0416,
+   "start": [
+    -9.21146,
+    0.0416,
+    -5.66556
+   ],
+   "start_yaw": 0.24382302558010563,
+   "shortest_geodesic_m": 6.56479,
+   "episode_id": "1S7LAXRdDqK:16666",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/1S7LAXRdDqK.json.gz",
+    "key": "1S7LAXRdDqK.basis.glb_sofa"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "3CBBjsNkhqW",
+   "seed": 24999,
+   "target": "tv_monitor",
+   "floor_y": 0.04261,
+   "start": [
+    -16.1271,
+    0.04261,
+    0.65242
+   ],
+   "start_yaw": 0.5898118638441023,
+   "shortest_geodesic_m": 5.83475,
+   "episode_id": "3CBBjsNkhqW:24999",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/3CBBjsNkhqW.json.gz",
+    "key": "3CBBjsNkhqW.basis.glb_tv_monitor"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "3CBBjsNkhqW",
+   "seed": 8333,
+   "target": "chair",
+   "floor_y": -3.00739,
+   "start": [
+    -13.69957,
+    -3.00739,
+    6.96654
+   ],
+   "start_yaw": 4.708782730624853,
+   "shortest_geodesic_m": 1.0191,
+   "episode_id": "3CBBjsNkhqW:8333",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/3CBBjsNkhqW.json.gz",
+    "key": "3CBBjsNkhqW.basis.glb_chair"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "6imZUJGRUq4",
+   "seed": 0,
+   "target": "chair",
+   "floor_y": -2.58991,
+   "start": [
+    7.16939,
+    -2.58991,
+    6.38726
+   ],
+   "start_yaw": 0.2837912807820783,
+   "shortest_geodesic_m": 5.63531,
+   "episode_id": "6imZUJGRUq4:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/6imZUJGRUq4.json.gz",
+    "key": "6imZUJGRUq4.basis.glb_chair"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "6imZUJGRUq4",
+   "seed": 24999,
+   "target": "sofa",
+   "floor_y": 0.01009,
+   "start": [
+    6.31901,
+    0.01009,
+    6.61217
+   ],
+   "start_yaw": 6.210749167707646,
+   "shortest_geodesic_m": 9.76002,
+   "episode_id": "6imZUJGRUq4:24999",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/6imZUJGRUq4.json.gz",
+    "key": "6imZUJGRUq4.basis.glb_sofa"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "FnDDfrBZPhh",
+   "seed": 24999,
+   "target": "chair",
+   "floor_y": 0.04619,
+   "start": [
+    -0.12996,
+    0.04619,
+    -0.65886
+   ],
+   "start_yaw": 3.163033118692275,
+   "shortest_geodesic_m": 6.82491,
+   "episode_id": "FnDDfrBZPhh:24999",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/FnDDfrBZPhh.json.gz",
+    "key": "FnDDfrBZPhh.basis.glb_chair"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "FnDDfrBZPhh",
+   "seed": 41665,
+   "target": "sofa",
+   "floor_y": 0.04619,
+   "start": [
+    -0.38667,
+    0.04619,
+    -2.2684
+   ],
+   "start_yaw": 2.1089564344287233,
+   "shortest_geodesic_m": 2.14334,
+   "episode_id": "FnDDfrBZPhh:41665",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/FnDDfrBZPhh.json.gz",
+    "key": "FnDDfrBZPhh.basis.glb_sofa"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "NtnvZSMK3en",
+   "seed": 40000,
+   "target": "tv_monitor",
+   "floor_y": 2.94971,
+   "start": [
+    6.43996,
+    2.94971,
+    -0.73952
+   ],
+   "start_yaw": 3.8832778882635495,
+   "shortest_geodesic_m": 9.33324,
+   "episode_id": "NtnvZSMK3en:40000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/NtnvZSMK3en.json.gz",
+    "key": "NtnvZSMK3en.basis.glb_tv_monitor"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "NtnvZSMK3en",
+   "seed": 20000,
+   "target": "chair",
+   "floor_y": 2.93169,
+   "start": [
+    3.39213,
+    2.93169,
+    -3.14661
+   ],
+   "start_yaw": 4.420734833042053,
+   "shortest_geodesic_m": 1.89711,
+   "episode_id": "NtnvZSMK3en:20000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/NtnvZSMK3en.json.gz",
+    "key": "NtnvZSMK3en.basis.glb_chair"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "SgkmkWjjmDJ",
+   "seed": 30000,
+   "target": "toilet",
+   "floor_y": -0.00667,
+   "start": [
+    5.90861,
+    -0.00667,
+    -0.16664
+   ],
+   "start_yaw": 4.1155096487930605,
+   "shortest_geodesic_m": 3.8978,
+   "episode_id": "SgkmkWjjmDJ:30000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/SgkmkWjjmDJ.json.gz",
+    "key": "SgkmkWjjmDJ.basis.glb_toilet"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "SgkmkWjjmDJ",
+   "seed": 40000,
+   "target": "bed",
+   "floor_y": 0.04333,
+   "start": [
+    5.22656,
+    0.04333,
+    0.79268
+   ],
+   "start_yaw": 0.22600117109741089,
+   "shortest_geodesic_m": 2.3119,
+   "episode_id": "SgkmkWjjmDJ:40000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/SgkmkWjjmDJ.json.gz",
+    "key": "SgkmkWjjmDJ.basis.glb_bed"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "UuwwmrTsfBN",
+   "seed": 41665,
+   "target": "sofa",
+   "floor_y": 0.02403,
+   "start": [
+    -4.14067,
+    0.02403,
+    -6.10163
+   ],
+   "start_yaw": 4.704511831731132,
+   "shortest_geodesic_m": 7.02854,
+   "episode_id": "UuwwmrTsfBN:41665",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/UuwwmrTsfBN.json.gz",
+    "key": "UuwwmrTsfBN.basis.glb_sofa"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "UuwwmrTsfBN",
+   "seed": 16666,
+   "target": "toilet",
+   "floor_y": 0.0087,
+   "start": [
+    0.46188,
+    0.0087,
+    -1.03241
+   ],
+   "start_yaw": 5.83545643353821,
+   "shortest_geodesic_m": 5.01017,
+   "episode_id": "UuwwmrTsfBN:16666",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/UuwwmrTsfBN.json.gz",
+    "key": "UuwwmrTsfBN.basis.glb_toilet"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "W16Bm4ysK8v",
+   "seed": 0,
+   "target": "plant",
+   "floor_y": 0.01442,
+   "start": [
+    -2.98756,
+    0.01442,
+    2.99537
+   ],
+   "start_yaw": 5.200720491516308,
+   "shortest_geodesic_m": 4.4868,
+   "episode_id": "W16Bm4ysK8v:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/W16Bm4ysK8v.json.gz",
+    "key": "W16Bm4ysK8v.basis.glb_plant"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "W16Bm4ysK8v",
+   "seed": 16666,
+   "target": "tv_monitor",
+   "floor_y": 0.01442,
+   "start": [
+    -1.62962,
+    0.01442,
+    0.18778
+   ],
+   "start_yaw": 2.2106123865844203,
+   "shortest_geodesic_m": 3.54626,
+   "episode_id": "W16Bm4ysK8v:16666",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/W16Bm4ysK8v.json.gz",
+    "key": "W16Bm4ysK8v.basis.glb_tv_monitor"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "Z2DQddYp1fn",
+   "seed": 16666,
+   "target": "chair",
+   "floor_y": -2.89774,
+   "start": [
+    5.46557,
+    -2.89774,
+    5.46217
+   ],
+   "start_yaw": 2.5794604434626347,
+   "shortest_geodesic_m": 3.9504,
+   "episode_id": "Z2DQddYp1fn:16666",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/Z2DQddYp1fn.json.gz",
+    "key": "Z2DQddYp1fn.basis.glb_chair"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "Z2DQddYp1fn",
+   "seed": 0,
+   "target": "sofa",
+   "floor_y": -2.89774,
+   "start": [
+    5.20379,
+    -2.89774,
+    6.57083
+   ],
+   "start_yaw": 5.5704356241370565,
+   "shortest_geodesic_m": 3.56592,
+   "episode_id": "Z2DQddYp1fn:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/Z2DQddYp1fn.json.gz",
+    "key": "Z2DQddYp1fn.basis.glb_sofa"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "gmuS7Wgsbrx",
+   "seed": 10000,
+   "target": "toilet",
+   "floor_y": -0.1286,
+   "start": [
+    18.08139,
+    -0.1286,
+    1.52399
+   ],
+   "start_yaw": 0.961150867881284,
+   "shortest_geodesic_m": 18.07992,
+   "episode_id": "gmuS7Wgsbrx:10000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/gmuS7Wgsbrx.json.gz",
+    "key": "gmuS7Wgsbrx.basis.glb_toilet"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "gmuS7Wgsbrx",
+   "seed": 0,
+   "target": "bed",
+   "floor_y": -0.1286,
+   "start": [
+    17.19177,
+    -0.1286,
+    0.07422
+   ],
+   "start_yaw": 3.694590386508362,
+   "shortest_geodesic_m": 24.83018,
+   "episode_id": "gmuS7Wgsbrx:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/gmuS7Wgsbrx.json.gz",
+    "key": "gmuS7Wgsbrx.basis.glb_bed"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "ooq3SnvC79d",
+   "seed": 0,
+   "target": "bed",
+   "floor_y": -0.33546,
+   "start": [
+    10.69209,
+    -0.33546,
+    2.09237
+   ],
+   "start_yaw": 0.3669769432278803,
+   "shortest_geodesic_m": 3.3717,
+   "episode_id": "ooq3SnvC79d:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/ooq3SnvC79d.json.gz",
+    "key": "ooq3SnvC79d.basis.glb_bed"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "ooq3SnvC79d",
+   "seed": 33332,
+   "target": "plant",
+   "floor_y": 0.01454,
+   "start": [
+    7.43878,
+    0.01454,
+    6.22859
+   ],
+   "start_yaw": 3.751249506225835,
+   "shortest_geodesic_m": 2.76428,
+   "episode_id": "ooq3SnvC79d:33332",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/ooq3SnvC79d.json.gz",
+    "key": "ooq3SnvC79d.basis.glb_plant"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "v7DzfFFEpsD",
+   "seed": 8333,
+   "target": "chair",
+   "floor_y": 0.00537,
+   "start": [
+    9.38682,
+    0.00537,
+    -1.90386
+   ],
+   "start_yaw": 4.026524700722952,
+   "shortest_geodesic_m": 2.11607,
+   "episode_id": "v7DzfFFEpsD:8333",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/v7DzfFFEpsD.json.gz",
+    "key": "v7DzfFFEpsD.basis.glb_chair"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "v7DzfFFEpsD",
+   "seed": 0,
+   "target": "sofa",
+   "floor_y": 0.00537,
+   "start": [
+    5.96283,
+    0.00537,
+    -3.15401
+   ],
+   "start_yaw": 0.4205732904387561,
+   "shortest_geodesic_m": 7.10221,
+   "episode_id": "v7DzfFFEpsD:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/v7DzfFFEpsD.json.gz",
+    "key": "v7DzfFFEpsD.basis.glb_sofa"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "wPLokgvCnuk",
+   "seed": 8333,
+   "target": "plant",
+   "floor_y": 0.78022,
+   "start": [
+    1.72604,
+    0.78022,
+    -6.73257
+   ],
+   "start_yaw": 3.1484326953220725,
+   "shortest_geodesic_m": 5.727,
+   "episode_id": "wPLokgvCnuk:8333",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/wPLokgvCnuk.json.gz",
+    "key": "wPLokgvCnuk.basis.glb_plant"
+   },
+   "fold": "B"
+  },
+  {
+   "scene": "wPLokgvCnuk",
+   "seed": 0,
+   "target": "tv_monitor",
+   "floor_y": -2.71978,
+   "start": [
+    0.53574,
+    -2.71978,
+    -1.64132
+   ],
+   "start_yaw": 4.248390501192552,
+   "shortest_geodesic_m": 3.54572,
+   "episode_id": "wPLokgvCnuk:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/wPLokgvCnuk.json.gz",
+    "key": "wPLokgvCnuk.basis.glb_tv_monitor"
+   },
+   "fold": "B"
+  }
+ ]
+}

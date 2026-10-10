@@ -1,0 +1,7 @@
+# HM3D ObjectNav v2 val, all 1000 episodes, our team (Table III).
+base: default.yaml
+experiment: hm3d_val
+dataset: hm3d
+episodes: data/episodes/team_episodes_hm3d_val.json
+conditions: [ours]
+mission_s: 150

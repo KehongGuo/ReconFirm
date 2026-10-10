@@ -1,0 +1,1727 @@
+{
+ "source": "objectnav_hm3d_v2 train",
+ "episodes": [
+  {
+   "scene": "1xGrZPxG1Hz",
+   "seed": 37500,
+   "target": "toilet",
+   "floor_y": 2.46078,
+   "start": [
+    -6.05739,
+    2.46078,
+    -0.94124
+   ],
+   "start_yaw": 2.4453766093023686,
+   "shortest_geodesic_m": 6.35974,
+   "episode_id": "1xGrZPxG1Hz:37500",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/1xGrZPxG1Hz.json.gz",
+    "key": "1xGrZPxG1Hz.basis.glb_toilet"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "1xGrZPxG1Hz",
+   "seed": 25000,
+   "target": "bed",
+   "floor_y": 2.46078,
+   "start": [
+    -8.26371,
+    2.46078,
+    1.70798
+   ],
+   "start_yaw": 1.9365812200553232,
+   "shortest_geodesic_m": 8.546,
+   "episode_id": "1xGrZPxG1Hz:25000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/1xGrZPxG1Hz.json.gz",
+    "key": "1xGrZPxG1Hz.basis.glb_bed"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "226REUyJh2K",
+   "seed": 20000,
+   "target": "bed",
+   "floor_y": 0.03688,
+   "start": [
+    15.16918,
+    0.03688,
+    11.06181
+   ],
+   "start_yaw": 2.009023898199399,
+   "shortest_geodesic_m": 24.88779,
+   "episode_id": "226REUyJh2K:20000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/226REUyJh2K.json.gz",
+    "key": "226REUyJh2K.basis.glb_bed"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "226REUyJh2K",
+   "seed": 30000,
+   "target": "tv_monitor",
+   "floor_y": -0.02847,
+   "start": [
+    -1.95128,
+    -0.02847,
+    7.42934
+   ],
+   "start_yaw": 4.405662454362089,
+   "shortest_geodesic_m": 2.34101,
+   "episode_id": "226REUyJh2K:30000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/226REUyJh2K.json.gz",
+    "key": "226REUyJh2K.basis.glb_tv_monitor"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "2Pc8W48bu21",
+   "seed": 16666,
+   "target": "plant",
+   "floor_y": 0.01767,
+   "start": [
+    9.27408,
+    0.01767,
+    7.39778
+   ],
+   "start_yaw": 4.75109838633635,
+   "shortest_geodesic_m": 12.63291,
+   "episode_id": "2Pc8W48bu21:16666",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/2Pc8W48bu21.json.gz",
+    "key": "2Pc8W48bu21.basis.glb_plant"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "2Pc8W48bu21",
+   "seed": 24999,
+   "target": "tv_monitor",
+   "floor_y": -0.03233,
+   "start": [
+    9.36642,
+    -0.03233,
+    0.30324
+   ],
+   "start_yaw": 2.665280552540669,
+   "shortest_geodesic_m": 4.41231,
+   "episode_id": "2Pc8W48bu21:24999",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/2Pc8W48bu21.json.gz",
+    "key": "2Pc8W48bu21.basis.glb_tv_monitor"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "4vwGX7U38Ux",
+   "seed": 40000,
+   "target": "sofa",
+   "floor_y": 0.03025,
+   "start": [
+    0.34234,
+    0.03025,
+    4.37085
+   ],
+   "start_yaw": 2.671247155024922,
+   "shortest_geodesic_m": 1.82497,
+   "episode_id": "4vwGX7U38Ux:40000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/4vwGX7U38Ux.json.gz",
+    "key": "4vwGX7U38Ux.basis.glb_sofa"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "4vwGX7U38Ux",
+   "seed": 20000,
+   "target": "toilet",
+   "floor_y": 0.03025,
+   "start": [
+    -1.39932,
+    0.03025,
+    4.25342
+   ],
+   "start_yaw": 1.7899430733565884,
+   "shortest_geodesic_m": 5.10855,
+   "episode_id": "4vwGX7U38Ux:20000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/4vwGX7U38Ux.json.gz",
+    "key": "4vwGX7U38Ux.basis.glb_toilet"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "6HRFAUDqpTb",
+   "seed": 8333,
+   "target": "plant",
+   "floor_y": 0.04286,
+   "start": [
+    -0.28419,
+    0.04286,
+    -0.11802
+   ],
+   "start_yaw": 6.239982090113378,
+   "shortest_geodesic_m": 6.29714,
+   "episode_id": "6HRFAUDqpTb:8333",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/6HRFAUDqpTb.json.gz",
+    "key": "6HRFAUDqpTb.basis.glb_plant"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "6HRFAUDqpTb",
+   "seed": 33289,
+   "target": "tv_monitor",
+   "floor_y": -1.26017,
+   "start": [
+    7.44226,
+    -1.26017,
+    -5.03961
+   ],
+   "start_yaw": 3.2000211569460095,
+   "shortest_geodesic_m": 5.53632,
+   "episode_id": "6HRFAUDqpTb:33289",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/6HRFAUDqpTb.json.gz",
+    "key": "6HRFAUDqpTb.basis.glb_tv_monitor"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "92vYG1q49FY",
+   "seed": 41665,
+   "target": "tv_monitor",
+   "floor_y": -2.93665,
+   "start": [
+    -1.89182,
+    -2.93665,
+    -4.57104
+   ],
+   "start_yaw": 1.84469437821977,
+   "shortest_geodesic_m": 7.79469,
+   "episode_id": "92vYG1q49FY:41665",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/92vYG1q49FY.json.gz",
+    "key": "92vYG1q49FY.basis.glb_tv_monitor"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "92vYG1q49FY",
+   "seed": 8333,
+   "target": "chair",
+   "floor_y": 0.21335,
+   "start": [
+    -1.34927,
+    0.21335,
+    0.20036
+   ],
+   "start_yaw": 2.2522950638099024,
+   "shortest_geodesic_m": 5.28533,
+   "episode_id": "92vYG1q49FY:8333",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/92vYG1q49FY.json.gz",
+    "key": "92vYG1q49FY.basis.glb_chair"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "9h5JJxM6E5S",
+   "seed": 16666,
+   "target": "chair",
+   "floor_y": 2.71103,
+   "start": [
+    4.92726,
+    2.71103,
+    3.17666
+   ],
+   "start_yaw": 4.47446684625232,
+   "shortest_geodesic_m": 2.05329,
+   "episode_id": "9h5JJxM6E5S:16666",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/9h5JJxM6E5S.json.gz",
+    "key": "9h5JJxM6E5S.basis.glb_chair"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "9h5JJxM6E5S",
+   "seed": 24999,
+   "target": "sofa",
+   "floor_y": 0.01103,
+   "start": [
+    6.64094,
+    0.01103,
+    1.89614
+   ],
+   "start_yaw": 4.318723899239552,
+   "shortest_geodesic_m": 5.38191,
+   "episode_id": "9h5JJxM6E5S:24999",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/9h5JJxM6E5S.json.gz",
+    "key": "9h5JJxM6E5S.basis.glb_sofa"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "ACZZiU6BXLz",
+   "seed": 24999,
+   "target": "sofa",
+   "floor_y": 0.03928,
+   "start": [
+    9.23021,
+    0.03928,
+    -3.45992
+   ],
+   "start_yaw": 3.1538727448719075,
+   "shortest_geodesic_m": 6.55438,
+   "episode_id": "ACZZiU6BXLz:24999",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/ACZZiU6BXLz.json.gz",
+    "key": "ACZZiU6BXLz.basis.glb_sofa"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "ACZZiU6BXLz",
+   "seed": 16666,
+   "target": "toilet",
+   "floor_y": 2.83928,
+   "start": [
+    9.58558,
+    2.83928,
+    -3.20364
+   ],
+   "start_yaw": 3.7872883736345955,
+   "shortest_geodesic_m": 2.98382,
+   "episode_id": "ACZZiU6BXLz:16666",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/ACZZiU6BXLz.json.gz",
+    "key": "ACZZiU6BXLz.basis.glb_toilet"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "CQWES1bawee",
+   "seed": 8333,
+   "target": "toilet",
+   "floor_y": 2.79018,
+   "start": [
+    3.34437,
+    2.79018,
+    1.974
+   ],
+   "start_yaw": 1.7826591233758653,
+   "shortest_geodesic_m": 3.33712,
+   "episode_id": "CQWES1bawee:8333",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/CQWES1bawee.json.gz",
+    "key": "CQWES1bawee.basis.glb_toilet"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "CQWES1bawee",
+   "seed": 41665,
+   "target": "bed",
+   "floor_y": 2.79018,
+   "start": [
+    3.42872,
+    2.79018,
+    1.47987
+   ],
+   "start_yaw": 3.1984200927330146,
+   "shortest_geodesic_m": 2.07015,
+   "episode_id": "CQWES1bawee:41665",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/CQWES1bawee.json.gz",
+    "key": "CQWES1bawee.basis.glb_bed"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "DoSbsoo4EAg",
+   "seed": 30000,
+   "target": "chair",
+   "floor_y": 0.07346,
+   "start": [
+    3.41086,
+    0.07346,
+    0.58742
+   ],
+   "start_yaw": 5.468370060845349,
+   "shortest_geodesic_m": 11.59765,
+   "episode_id": "DoSbsoo4EAg:30000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/DoSbsoo4EAg.json.gz",
+    "key": "DoSbsoo4EAg.basis.glb_chair"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "DoSbsoo4EAg",
+   "seed": 40000,
+   "target": "sofa",
+   "floor_y": 0.08376,
+   "start": [
+    4.29347,
+    0.08376,
+    0.64756
+   ],
+   "start_yaw": 0.36451364200668895,
+   "shortest_geodesic_m": 11.42388,
+   "episode_id": "DoSbsoo4EAg:40000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/DoSbsoo4EAg.json.gz",
+    "key": "DoSbsoo4EAg.basis.glb_sofa"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "DsEJeNPcZtE",
+   "seed": 16666,
+   "target": "toilet",
+   "floor_y": 0.00406,
+   "start": [
+    0.35987,
+    0.00406,
+    -2.13598
+   ],
+   "start_yaw": 5.189442728773824,
+   "shortest_geodesic_m": 3.80298,
+   "episode_id": "DsEJeNPcZtE:16666",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/DsEJeNPcZtE.json.gz",
+    "key": "DsEJeNPcZtE.basis.glb_toilet"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "DsEJeNPcZtE",
+   "seed": 33332,
+   "target": "bed",
+   "floor_y": 0.00406,
+   "start": [
+    -0.82802,
+    0.00406,
+    -0.10637
+   ],
+   "start_yaw": 3.0060895891902892,
+   "shortest_geodesic_m": 6.6052,
+   "episode_id": "DsEJeNPcZtE:33332",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/DsEJeNPcZtE.json.gz",
+    "key": "DsEJeNPcZtE.basis.glb_bed"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "GGBvSFddQgs",
+   "seed": 20000,
+   "target": "sofa",
+   "floor_y": 0.02892,
+   "start": [
+    8.33829,
+    0.02892,
+    10.68959
+   ],
+   "start_yaw": 4.9395318057815665,
+   "shortest_geodesic_m": 12.05114,
+   "episode_id": "GGBvSFddQgs:20000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/GGBvSFddQgs.json.gz",
+    "key": "GGBvSFddQgs.basis.glb_sofa"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "GGBvSFddQgs",
+   "seed": 40000,
+   "target": "toilet",
+   "floor_y": 2.8054,
+   "start": [
+    5.48673,
+    2.8054,
+    4.34501
+   ],
+   "start_yaw": 0.16205711093276354,
+   "shortest_geodesic_m": 7.2514,
+   "episode_id": "GGBvSFddQgs:40000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/GGBvSFddQgs.json.gz",
+    "key": "GGBvSFddQgs.basis.glb_toilet"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "GPyDUnjwZQy",
+   "seed": 24999,
+   "target": "toilet",
+   "floor_y": 2.79734,
+   "start": [
+    0.14607,
+    2.79734,
+    0.1413
+   ],
+   "start_yaw": 2.166163867996588,
+   "shortest_geodesic_m": 1.4632,
+   "episode_id": "GPyDUnjwZQy:24999",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/GPyDUnjwZQy.json.gz",
+    "key": "GPyDUnjwZQy.basis.glb_toilet"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "GPyDUnjwZQy",
+   "seed": 0,
+   "target": "bed",
+   "floor_y": 2.74734,
+   "start": [
+    -1.71214,
+    2.74734,
+    0.87481
+   ],
+   "start_yaw": 5.58181919982523,
+   "shortest_geodesic_m": 2.16862,
+   "episode_id": "GPyDUnjwZQy:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/GPyDUnjwZQy.json.gz",
+    "key": "GPyDUnjwZQy.basis.glb_bed"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "GTV2Y73Sn5t",
+   "seed": 33332,
+   "target": "bed",
+   "floor_y": 0.04945,
+   "start": [
+    -5.12259,
+    0.04945,
+    -3.64661
+   ],
+   "start_yaw": 4.320914965990218,
+   "shortest_geodesic_m": 3.2738,
+   "episode_id": "GTV2Y73Sn5t:33332",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/GTV2Y73Sn5t.json.gz",
+    "key": "GTV2Y73Sn5t.basis.glb_bed"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "GTV2Y73Sn5t",
+   "seed": 8333,
+   "target": "plant",
+   "floor_y": -2.80055,
+   "start": [
+    -6.69343,
+    -2.80055,
+    -4.89985
+   ],
+   "start_yaw": 2.2790204582176634,
+   "shortest_geodesic_m": 4.65146,
+   "episode_id": "GTV2Y73Sn5t:8333",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/GTV2Y73Sn5t.json.gz",
+    "key": "GTV2Y73Sn5t.basis.glb_plant"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "HfMobPm86Xn",
+   "seed": 33332,
+   "target": "bed",
+   "floor_y": 0.04596,
+   "start": [
+    -16.63442,
+    0.04596,
+    -4.29386
+   ],
+   "start_yaw": 1.484700493171389,
+   "shortest_geodesic_m": 6.37767,
+   "episode_id": "HfMobPm86Xn:33332",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/HfMobPm86Xn.json.gz",
+    "key": "HfMobPm86Xn.basis.glb_bed"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "HfMobPm86Xn",
+   "seed": 24999,
+   "target": "plant",
+   "floor_y": 0.04596,
+   "start": [
+    -20.68536,
+    0.04596,
+    -9.78635
+   ],
+   "start_yaw": 0.3140906644885662,
+   "shortest_geodesic_m": 7.16204,
+   "episode_id": "HfMobPm86Xn:24999",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/HfMobPm86Xn.json.gz",
+    "key": "HfMobPm86Xn.basis.glb_plant"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "RaYrxWt5pR1",
+   "seed": 8333,
+   "target": "chair",
+   "floor_y": 0.0584,
+   "start": [
+    -5.53282,
+    0.0584,
+    -0.20798
+   ],
+   "start_yaw": 2.1324793540051186,
+   "shortest_geodesic_m": 6.38401,
+   "episode_id": "RaYrxWt5pR1:8333",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/RaYrxWt5pR1.json.gz",
+    "key": "RaYrxWt5pR1.basis.glb_chair"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "RaYrxWt5pR1",
+   "seed": 33332,
+   "target": "sofa",
+   "floor_y": 0.0084,
+   "start": [
+    1.94718,
+    0.0084,
+    4.70727
+   ],
+   "start_yaw": 4.302398898822468,
+   "shortest_geodesic_m": 4.07481,
+   "episode_id": "RaYrxWt5pR1:33332",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/RaYrxWt5pR1.json.gz",
+    "key": "RaYrxWt5pR1.basis.glb_sofa"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "TSJmdttd2GV",
+   "seed": 0,
+   "target": "bed",
+   "floor_y": 0.0063,
+   "start": [
+    -0.2391,
+    0.0063,
+    -4.26624
+   ],
+   "start_yaw": 0.7332578058293903,
+   "shortest_geodesic_m": 6.55033,
+   "episode_id": "TSJmdttd2GV:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/TSJmdttd2GV.json.gz",
+    "key": "TSJmdttd2GV.basis.glb_bed"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "TSJmdttd2GV",
+   "seed": 30000,
+   "target": "plant",
+   "floor_y": 3.6366,
+   "start": [
+    -2.10038,
+    3.6366,
+    -1.64927
+   ],
+   "start_yaw": 0.14994057530037333,
+   "shortest_geodesic_m": 3.14444,
+   "episode_id": "TSJmdttd2GV:30000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/TSJmdttd2GV.json.gz",
+    "key": "TSJmdttd2GV.basis.glb_plant"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "URjpCob8MGw",
+   "seed": 0,
+   "target": "chair",
+   "floor_y": 0.03476,
+   "start": [
+    6.12089,
+    0.03476,
+    0.91655
+   ],
+   "start_yaw": 0.7634862078899831,
+   "shortest_geodesic_m": 5.09933,
+   "episode_id": "URjpCob8MGw:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/URjpCob8MGw.json.gz",
+    "key": "URjpCob8MGw.basis.glb_chair"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "URjpCob8MGw",
+   "seed": 40000,
+   "target": "sofa",
+   "floor_y": 2.94264,
+   "start": [
+    1.18909,
+    2.94264,
+    8.22226
+   ],
+   "start_yaw": 0.5732146170773917,
+   "shortest_geodesic_m": 3.51566,
+   "episode_id": "URjpCob8MGw:40000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/URjpCob8MGw.json.gz",
+    "key": "URjpCob8MGw.basis.glb_sofa"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "WhNyDTnd9g5",
+   "seed": 41665,
+   "target": "chair",
+   "floor_y": 0.03535,
+   "start": [
+    1.78744,
+    0.03535,
+    -1.07511
+   ],
+   "start_yaw": 3.8302424433628732,
+   "shortest_geodesic_m": 3.62987,
+   "episode_id": "WhNyDTnd9g5:41665",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/WhNyDTnd9g5.json.gz",
+    "key": "WhNyDTnd9g5.basis.glb_chair"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "WhNyDTnd9g5",
+   "seed": 33332,
+   "target": "sofa",
+   "floor_y": 0.04344,
+   "start": [
+    -3.37422,
+    0.04344,
+    2.09307
+   ],
+   "start_yaw": 4.2034122453593605,
+   "shortest_geodesic_m": 6.89367,
+   "episode_id": "WhNyDTnd9g5:33332",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/WhNyDTnd9g5.json.gz",
+    "key": "WhNyDTnd9g5.basis.glb_sofa"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "Wo6kuutE9i7",
+   "seed": 41665,
+   "target": "sofa",
+   "floor_y": -0.17364,
+   "start": [
+    -1.08899,
+    -0.17364,
+    -2.44066
+   ],
+   "start_yaw": 4.392272689577279,
+   "shortest_geodesic_m": 14.50669,
+   "episode_id": "Wo6kuutE9i7:41665",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/Wo6kuutE9i7.json.gz",
+    "key": "Wo6kuutE9i7.basis.glb_sofa"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "Wo6kuutE9i7",
+   "seed": 24999,
+   "target": "toilet",
+   "floor_y": -0.17364,
+   "start": [
+    -2.73379,
+    -0.17364,
+    -1.89068
+   ],
+   "start_yaw": 1.0209047490428838,
+   "shortest_geodesic_m": 8.89978,
+   "episode_id": "Wo6kuutE9i7:24999",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/Wo6kuutE9i7.json.gz",
+    "key": "Wo6kuutE9i7.basis.glb_toilet"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "XYyR54sxe6b",
+   "seed": 33332,
+   "target": "plant",
+   "floor_y": 0.01708,
+   "start": [
+    -3.32724,
+    0.01708,
+    0.28344
+   ],
+   "start_yaw": 2.1788582657179725,
+   "shortest_geodesic_m": 7.79047,
+   "episode_id": "XYyR54sxe6b:33332",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/XYyR54sxe6b.json.gz",
+    "key": "XYyR54sxe6b.basis.glb_plant"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "XYyR54sxe6b",
+   "seed": 0,
+   "target": "tv_monitor",
+   "floor_y": 0.01708,
+   "start": [
+    -1.18596,
+    0.01708,
+    -3.16845
+   ],
+   "start_yaw": 2.5435625521767284,
+   "shortest_geodesic_m": 5.39184,
+   "episode_id": "XYyR54sxe6b:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/XYyR54sxe6b.json.gz",
+    "key": "XYyR54sxe6b.basis.glb_tv_monitor"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "YY8rqV6L6rf",
+   "seed": 33332,
+   "target": "plant",
+   "floor_y": 0.02109,
+   "start": [
+    0.85762,
+    0.02109,
+    -1.19329
+   ],
+   "start_yaw": 3.7943592506855177,
+   "shortest_geodesic_m": 3.55303,
+   "episode_id": "YY8rqV6L6rf:33332",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/YY8rqV6L6rf.json.gz",
+    "key": "YY8rqV6L6rf.basis.glb_plant"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "YY8rqV6L6rf",
+   "seed": 24999,
+   "target": "tv_monitor",
+   "floor_y": 0.02109,
+   "start": [
+    -5.17412,
+    0.02109,
+    -6.5891
+   ],
+   "start_yaw": 2.2341808571238633,
+   "shortest_geodesic_m": 8.86926,
+   "episode_id": "YY8rqV6L6rf:24999",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/YY8rqV6L6rf.json.gz",
+    "key": "YY8rqV6L6rf.basis.glb_tv_monitor"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "ZNanfzgCdm3",
+   "seed": 33332,
+   "target": "sofa",
+   "floor_y": 0.01465,
+   "start": [
+    -4.23774,
+    0.01465,
+    4.27411
+   ],
+   "start_yaw": 5.081064189389406,
+   "shortest_geodesic_m": 4.4368,
+   "episode_id": "ZNanfzgCdm3:33332",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/ZNanfzgCdm3.json.gz",
+    "key": "ZNanfzgCdm3.basis.glb_sofa"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "ZNanfzgCdm3",
+   "seed": 16666,
+   "target": "toilet",
+   "floor_y": 0.01465,
+   "start": [
+    -6.20834,
+    0.01465,
+    4.3797
+   ],
+   "start_yaw": 2.6329451893601536,
+   "shortest_geodesic_m": 2.5807,
+   "episode_id": "ZNanfzgCdm3:16666",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/ZNanfzgCdm3.json.gz",
+    "key": "ZNanfzgCdm3.basis.glb_toilet"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "bB6nKqfsb1z",
+   "seed": 40000,
+   "target": "tv_monitor",
+   "floor_y": 0.06005,
+   "start": [
+    -2.80149,
+    0.06005,
+    10.5081
+   ],
+   "start_yaw": 0.6301119387273386,
+   "shortest_geodesic_m": 25.27055,
+   "episode_id": "bB6nKqfsb1z:40000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/bB6nKqfsb1z.json.gz",
+    "key": "bB6nKqfsb1z.basis.glb_tv_monitor"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "bB6nKqfsb1z",
+   "seed": 30000,
+   "target": "chair",
+   "floor_y": 0.0289,
+   "start": [
+    4.22792,
+    0.0289,
+    -1.37757
+   ],
+   "start_yaw": 3.4122571553769614,
+   "shortest_geodesic_m": 18.22938,
+   "episode_id": "bB6nKqfsb1z:30000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/bB6nKqfsb1z.json.gz",
+    "key": "bB6nKqfsb1z.basis.glb_chair"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "bHKTDQFJxTw",
+   "seed": 16667,
+   "target": "chair",
+   "floor_y": 0.11209,
+   "start": [
+    4.86017,
+    0.11209,
+    -0.44918
+   ],
+   "start_yaw": 0.28692234166524183,
+   "shortest_geodesic_m": 5.85539,
+   "episode_id": "bHKTDQFJxTw:16667",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/bHKTDQFJxTw.json.gz",
+    "key": "bHKTDQFJxTw.basis.glb_chair"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "bHKTDQFJxTw",
+   "seed": 33334,
+   "target": "sofa",
+   "floor_y": 0.05454,
+   "start": [
+    18.41903,
+    0.05454,
+    -3.54734
+   ],
+   "start_yaw": 2.184493889145964,
+   "shortest_geodesic_m": 2.69267,
+   "episode_id": "bHKTDQFJxTw:33334",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/bHKTDQFJxTw.json.gz",
+    "key": "bHKTDQFJxTw.basis.glb_sofa"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "bdp1XNEdvmW",
+   "seed": 0,
+   "target": "chair",
+   "floor_y": 0.04179,
+   "start": [
+    2.97653,
+    0.04179,
+    5.3803
+   ],
+   "start_yaw": 0.31947657225253734,
+   "shortest_geodesic_m": 4.37334,
+   "episode_id": "bdp1XNEdvmW:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/bdp1XNEdvmW.json.gz",
+    "key": "bdp1XNEdvmW.basis.glb_chair"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "bdp1XNEdvmW",
+   "seed": 8333,
+   "target": "sofa",
+   "floor_y": 0.04179,
+   "start": [
+    4.07442,
+    0.04179,
+    2.94065
+   ],
+   "start_yaw": 2.408442540730475,
+   "shortest_geodesic_m": 4.31673,
+   "episode_id": "bdp1XNEdvmW:8333",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/bdp1XNEdvmW.json.gz",
+    "key": "bdp1XNEdvmW.basis.glb_sofa"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "erXNfWVjqZ8",
+   "seed": 33332,
+   "target": "bed",
+   "floor_y": 2.76882,
+   "start": [
+    -9.02097,
+    2.76882,
+    2.60366
+   ],
+   "start_yaw": 2.8039729854985946,
+   "shortest_geodesic_m": 4.48942,
+   "episode_id": "erXNfWVjqZ8:33332",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/erXNfWVjqZ8.json.gz",
+    "key": "erXNfWVjqZ8.basis.glb_bed"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "erXNfWVjqZ8",
+   "seed": 0,
+   "target": "plant",
+   "floor_y": -2.60871,
+   "start": [
+    -5.52994,
+    -2.60871,
+    1.16527
+   ],
+   "start_yaw": 5.024883989540499,
+   "shortest_geodesic_m": 5.63553,
+   "episode_id": "erXNfWVjqZ8:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/erXNfWVjqZ8.json.gz",
+    "key": "erXNfWVjqZ8.basis.glb_plant"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "g7hUFVNac26",
+   "seed": 0,
+   "target": "sofa",
+   "floor_y": 3.04032,
+   "start": [
+    4.36833,
+    3.04032,
+    0.52425
+   ],
+   "start_yaw": 0.8757614333856004,
+   "shortest_geodesic_m": 8.22335,
+   "episode_id": "g7hUFVNac26:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/g7hUFVNac26.json.gz",
+    "key": "g7hUFVNac26.basis.glb_sofa"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "g7hUFVNac26",
+   "seed": 41665,
+   "target": "toilet",
+   "floor_y": 3.04032,
+   "start": [
+    3.94137,
+    3.04032,
+    1.24609
+   ],
+   "start_yaw": 2.145413175385953,
+   "shortest_geodesic_m": 4.74818,
+   "episode_id": "g7hUFVNac26:41665",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/g7hUFVNac26.json.gz",
+    "key": "g7hUFVNac26.basis.glb_toilet"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "h6nwVLpAKQz",
+   "seed": 0,
+   "target": "toilet",
+   "floor_y": 2.59864,
+   "start": [
+    1.0966,
+    2.59864,
+    -7.33119
+   ],
+   "start_yaw": 5.786951170993804,
+   "shortest_geodesic_m": 2.0343,
+   "episode_id": "h6nwVLpAKQz:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/h6nwVLpAKQz.json.gz",
+    "key": "h6nwVLpAKQz.basis.glb_toilet"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "h6nwVLpAKQz",
+   "seed": 10000,
+   "target": "bed",
+   "floor_y": 2.64864,
+   "start": [
+    -1.3566,
+    2.64864,
+    -3.62113
+   ],
+   "start_yaw": 1.647436920751527,
+   "shortest_geodesic_m": 1.56533,
+   "episode_id": "h6nwVLpAKQz:10000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/h6nwVLpAKQz.json.gz",
+    "key": "h6nwVLpAKQz.basis.glb_bed"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "iKFn6fzyRqs",
+   "seed": 8333,
+   "target": "plant",
+   "floor_y": 0.04266,
+   "start": [
+    3.61886,
+    0.04266,
+    4.46731
+   ],
+   "start_yaw": 0.5680442165847616,
+   "shortest_geodesic_m": 3.99259,
+   "episode_id": "iKFn6fzyRqs:8333",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/iKFn6fzyRqs.json.gz",
+    "key": "iKFn6fzyRqs.basis.glb_plant"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "iKFn6fzyRqs",
+   "seed": 16666,
+   "target": "tv_monitor",
+   "floor_y": 0.04266,
+   "start": [
+    3.534,
+    0.04266,
+    4.48639
+   ],
+   "start_yaw": 5.006631182614241,
+   "shortest_geodesic_m": 4.04085,
+   "episode_id": "iKFn6fzyRqs:16666",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/iKFn6fzyRqs.json.gz",
+    "key": "iKFn6fzyRqs.basis.glb_tv_monitor"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "iigzG1rtanx",
+   "seed": 0,
+   "target": "sofa",
+   "floor_y": 1.54523,
+   "start": [
+    -4.4965,
+    1.54523,
+    2.62881
+   ],
+   "start_yaw": 0.19308047823619603,
+   "shortest_geodesic_m": 4.69394,
+   "episode_id": "iigzG1rtanx:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/iigzG1rtanx.json.gz",
+    "key": "iigzG1rtanx.basis.glb_sofa"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "iigzG1rtanx",
+   "seed": 24999,
+   "target": "toilet",
+   "floor_y": 1.54523,
+   "start": [
+    -7.98395,
+    1.54523,
+    4.87901
+   ],
+   "start_yaw": 1.6545000840919488,
+   "shortest_geodesic_m": 4.8849,
+   "episode_id": "iigzG1rtanx:24999",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/iigzG1rtanx.json.gz",
+    "key": "iigzG1rtanx.basis.glb_toilet"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "ixTj1aTMup2",
+   "seed": 24999,
+   "target": "toilet",
+   "floor_y": 3.20792,
+   "start": [
+    2.43729,
+    3.20792,
+    0.28665
+   ],
+   "start_yaw": 2.72273750147482,
+   "shortest_geodesic_m": 1.76138,
+   "episode_id": "ixTj1aTMup2:24999",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/ixTj1aTMup2.json.gz",
+    "key": "ixTj1aTMup2.basis.glb_toilet"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "ixTj1aTMup2",
+   "seed": 16666,
+   "target": "bed",
+   "floor_y": -2.79208,
+   "start": [
+    -2.20834,
+    -2.79208,
+    0.33002
+   ],
+   "start_yaw": 4.445627106654913,
+   "shortest_geodesic_m": 5.3955,
+   "episode_id": "ixTj1aTMup2:16666",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/ixTj1aTMup2.json.gz",
+    "key": "ixTj1aTMup2.basis.glb_bed"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "kA2nG18hCAr",
+   "seed": 33332,
+   "target": "tv_monitor",
+   "floor_y": 0.07853,
+   "start": [
+    3.99878,
+    0.07853,
+    3.29804
+   ],
+   "start_yaw": 0.8207897734833058,
+   "shortest_geodesic_m": 5.29468,
+   "episode_id": "kA2nG18hCAr:33332",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/kA2nG18hCAr.json.gz",
+    "key": "kA2nG18hCAr.basis.glb_tv_monitor"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "kA2nG18hCAr",
+   "seed": 16666,
+   "target": "chair",
+   "floor_y": -2.76723,
+   "start": [
+    -1.99751,
+    -2.76723,
+    3.1553
+   ],
+   "start_yaw": 2.983367302037998,
+   "shortest_geodesic_m": 2.60132,
+   "episode_id": "kA2nG18hCAr:16666",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/kA2nG18hCAr.json.gz",
+    "key": "kA2nG18hCAr.basis.glb_chair"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "nACV8wLu1u5",
+   "seed": 41665,
+   "target": "toilet",
+   "floor_y": 0.01446,
+   "start": [
+    4.39642,
+    0.01446,
+    -1.63851
+   ],
+   "start_yaw": 0.25523173476856675,
+   "shortest_geodesic_m": 6.56525,
+   "episode_id": "nACV8wLu1u5:41665",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/nACV8wLu1u5.json.gz",
+    "key": "nACV8wLu1u5.basis.glb_toilet"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "nACV8wLu1u5",
+   "seed": 24999,
+   "target": "bed",
+   "floor_y": 0.01446,
+   "start": [
+    -2.77336,
+    0.01446,
+    1.12409
+   ],
+   "start_yaw": 1.4499063875603702,
+   "shortest_geodesic_m": 5.30558,
+   "episode_id": "nACV8wLu1u5:24999",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/nACV8wLu1u5.json.gz",
+    "key": "nACV8wLu1u5.basis.glb_bed"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "nGhNxKrgBPb",
+   "seed": 16666,
+   "target": "bed",
+   "floor_y": 0.00262,
+   "start": [
+    12.18832,
+    0.00262,
+    -4.17121
+   ],
+   "start_yaw": 3.5597535560782543,
+   "shortest_geodesic_m": 8.94004,
+   "episode_id": "nGhNxKrgBPb:16666",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/nGhNxKrgBPb.json.gz",
+    "key": "nGhNxKrgBPb.basis.glb_bed"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "nGhNxKrgBPb",
+   "seed": 0,
+   "target": "plant",
+   "floor_y": 0.05262,
+   "start": [
+    9.23658,
+    0.05262,
+    1.79921
+   ],
+   "start_yaw": 4.05896858690466,
+   "shortest_geodesic_m": 5.13697,
+   "episode_id": "nGhNxKrgBPb:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/nGhNxKrgBPb.json.gz",
+    "key": "nGhNxKrgBPb.basis.glb_plant"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "oStKKWkQ1id",
+   "seed": 41665,
+   "target": "sofa",
+   "floor_y": 0.03911,
+   "start": [
+    0.11562,
+    0.03911,
+    4.53645
+   ],
+   "start_yaw": 3.8374225357566796,
+   "shortest_geodesic_m": 11.93643,
+   "episode_id": "oStKKWkQ1id:41665",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/oStKKWkQ1id.json.gz",
+    "key": "oStKKWkQ1id.basis.glb_sofa"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "oStKKWkQ1id",
+   "seed": 16666,
+   "target": "toilet",
+   "floor_y": 0.03911,
+   "start": [
+    -1.65203,
+    0.03911,
+    4.04016
+   ],
+   "start_yaw": 0.4270770659930527,
+   "shortest_geodesic_m": 8.41218,
+   "episode_id": "oStKKWkQ1id:16666",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/oStKKWkQ1id.json.gz",
+    "key": "oStKKWkQ1id.basis.glb_toilet"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "qz3829g1Lzf",
+   "seed": 8333,
+   "target": "toilet",
+   "floor_y": -0.00218,
+   "start": [
+    0.7786,
+    -0.00218,
+    0.48427
+   ],
+   "start_yaw": 5.856986853792025,
+   "shortest_geodesic_m": 4.46039,
+   "episode_id": "qz3829g1Lzf:8333",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/qz3829g1Lzf.json.gz",
+    "key": "qz3829g1Lzf.basis.glb_toilet"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "qz3829g1Lzf",
+   "seed": 0,
+   "target": "bed",
+   "floor_y": 0.03398,
+   "start": [
+    3.96518,
+    0.03398,
+    2.36124
+   ],
+   "start_yaw": 5.693499888585189,
+   "shortest_geodesic_m": 5.28668,
+   "episode_id": "qz3829g1Lzf:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/qz3829g1Lzf.json.gz",
+    "key": "qz3829g1Lzf.basis.glb_bed"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "vDfkYo5VqEQ",
+   "seed": 8333,
+   "target": "sofa",
+   "floor_y": -3.16799,
+   "start": [
+    5.54039,
+    -3.16799,
+    5.81918
+   ],
+   "start_yaw": 5.649639147765083,
+   "shortest_geodesic_m": 3.30136,
+   "episode_id": "vDfkYo5VqEQ:8333",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/vDfkYo5VqEQ.json.gz",
+    "key": "vDfkYo5VqEQ.basis.glb_sofa"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "vDfkYo5VqEQ",
+   "seed": 41665,
+   "target": "toilet",
+   "floor_y": 0.03201,
+   "start": [
+    6.08851,
+    0.03201,
+    3.40466
+   ],
+   "start_yaw": 5.82638411199571,
+   "shortest_geodesic_m": 5.24942,
+   "episode_id": "vDfkYo5VqEQ:41665",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/vDfkYo5VqEQ.json.gz",
+    "key": "vDfkYo5VqEQ.basis.glb_toilet"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "yHLr6bvWsVm",
+   "seed": 41665,
+   "target": "bed",
+   "floor_y": 0.00241,
+   "start": [
+    -1.44614,
+    0.00241,
+    8.56185
+   ],
+   "start_yaw": 2.1194077624100305,
+   "shortest_geodesic_m": 10.12578,
+   "episode_id": "yHLr6bvWsVm:41665",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/yHLr6bvWsVm.json.gz",
+    "key": "yHLr6bvWsVm.basis.glb_bed"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "yHLr6bvWsVm",
+   "seed": 0,
+   "target": "plant",
+   "floor_y": 0.00241,
+   "start": [
+    -1.75666,
+    0.00241,
+    7.64023
+   ],
+   "start_yaw": 2.8861600007395434,
+   "shortest_geodesic_m": 7.26402,
+   "episode_id": "yHLr6bvWsVm:0",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/yHLr6bvWsVm.json.gz",
+    "key": "yHLr6bvWsVm.basis.glb_plant"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "yX5efd48dLf",
+   "seed": 20000,
+   "target": "plant",
+   "floor_y": 0.05998,
+   "start": [
+    6.09959,
+    0.05998,
+    -1.6508
+   ],
+   "start_yaw": 5.568600418238628,
+   "shortest_geodesic_m": 3.01708,
+   "episode_id": "yX5efd48dLf:20000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/yX5efd48dLf.json.gz",
+    "key": "yX5efd48dLf.basis.glb_plant"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "yX5efd48dLf",
+   "seed": 40000,
+   "target": "tv_monitor",
+   "floor_y": 0.05998,
+   "start": [
+    6.11761,
+    0.05998,
+    -1.22291
+   ],
+   "start_yaw": 4.601670454230635,
+   "shortest_geodesic_m": 4.96201,
+   "episode_id": "yX5efd48dLf:40000",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/yX5efd48dLf.json.gz",
+    "key": "yX5efd48dLf.basis.glb_tv_monitor"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "zepmXAdrpjR",
+   "seed": 8333,
+   "target": "chair",
+   "floor_y": 0.02751,
+   "start": [
+    5.96543,
+    0.02751,
+    2.96421
+   ],
+   "start_yaw": 2.957431856266062,
+   "shortest_geodesic_m": 2.13143,
+   "episode_id": "zepmXAdrpjR:8333",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/zepmXAdrpjR.json.gz",
+    "key": "zepmXAdrpjR.basis.glb_chair"
+   },
+   "fold": "R1"
+  },
+  {
+   "scene": "zepmXAdrpjR",
+   "seed": 24999,
+   "target": "sofa",
+   "floor_y": -0.04952,
+   "start": [
+    9.69644,
+    -0.04952,
+    6.21637
+   ],
+   "start_yaw": 4.595239412777752,
+   "shortest_geodesic_m": 6.40944,
+   "episode_id": "zepmXAdrpjR:24999",
+   "objectnav_episode_id": "0",
+   "role": "hm3d_train",
+   "objectnav": {
+    "file": "train/content/zepmXAdrpjR.json.gz",
+    "key": "zepmXAdrpjR.basis.glb_sofa"
+   },
+   "fold": "R1"
+  }
+ ]
+}

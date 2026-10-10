@@ -1,0 +1,2 @@
+# The scheduler / verifier VLM server (a separate environment, Python 3.11)
+vllm==0.29.0

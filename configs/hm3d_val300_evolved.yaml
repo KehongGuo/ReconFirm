@@ -1,0 +1,10 @@
+# Self-evolution evaluation on a fixed, stratified 300-episode subset of HM3D val (frozen before any run).
+# memory.store: a frozen case memory (tools/memory.py freeze); verifier.model: a LoRA served beside the base
+# (scripts/serve_vllm.sh with LORA=1, then tools/verifier_evolve.py load). Drop either for the single-part rows.
+base: default.yaml
+experiment: hm3d_val300_evolved
+dataset: hm3d
+episodes: data/episodes/team_episodes_hm3d_val300.json
+conditions: [ours]
+memory: {store: memory/frozen.json, learn: false}
+verifier: {model: r1}

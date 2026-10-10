@@ -1,0 +1,70 @@
+{
+ "source": "objectnav_hm3d_v2 train goal object names",
+ "min_count": 3,
+ "min_share": 0.05,
+ "share_rule": [
+  "tv_monitor"
+ ],
+ "categories": {
+  "bed": [
+   "bed",
+   "dog bed",
+   "bedframe",
+   "massage bed",
+   "bed sheet",
+   "headboard",
+   "bedpost",
+   "hammock"
+  ],
+  "chair": [
+   "chair",
+   "armchair",
+   "dining chair",
+   "bar chair",
+   "sofa chair",
+   "desk chair",
+   "office chair",
+   "lounge chair",
+   "patio chair",
+   "folding chair",
+   "rocking chair",
+   "beanbag",
+   "computer chair",
+   "easy chair",
+   "stacked chair",
+   "garden chair",
+   "dinner chair",
+   "highchair",
+   "beanbag chair",
+   "bean bag chair",
+   "kitchen chair",
+   "stack of chairs"
+  ],
+  "plant": [
+   "plant",
+   "decorative plant",
+   "flowerpot",
+   "flower vase",
+   "flower",
+   "flower stand",
+   "plant ornament",
+   "grass",
+   "tree"
+  ],
+  "sofa": [
+   "couch",
+   "sofa",
+   "l-shaped sofa",
+   "sofa set"
+  ],
+  "toilet": [
+   "toilet",
+   "bidet"
+  ],
+  "tv_monitor": [
+   "tv",
+   "monitor",
+   "display"
+  ]
+ }
+}

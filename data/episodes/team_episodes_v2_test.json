@@ -1,0 +1,1141 @@
+{
+  "kind": "team_episodes",
+  "version": 2,
+  "split": "test",
+  "criteria": {
+    "min_geodesic_m_all_instances": 10.0,
+    "target_not_in_start_room": true
+  },
+  "team": "3 drones + 1 legged robot (dog0)",
+  "mission_s": 300.0,
+  "drone_endurance_s": 150.0,
+  "swap_s": 15.0,
+  "success": "the dog declares within 1.0 m (horizontal, OBB) of a real instance, start floor",
+  "episodes": [
+    {
+      "scene": "i5noydFURQK",
+      "seed": 20,
+      "target": "toilet",
+      "floor_y": -3.2131762504577637,
+      "start": [
+        1.4452885389328003,
+        -3.2131762504577637,
+        9.85368537902832
+      ],
+      "start_yaw": -2.5925663121880156,
+      "shortest_geodesic_m": 11.394,
+      "eligible_targets": {
+        "toilet": 11.394
+      },
+      "start_rooms": [
+        11
+      ],
+      "episode_id": "i5noydFURQK:v2s20",
+      "role": "test"
+    },
+    {
+      "scene": "aayBHfsNo7d",
+      "seed": 20,
+      "target": "sofa",
+      "floor_y": 3.628256320953369,
+      "start": [
+        19.712186813354492,
+        3.628256320953369,
+        8.120580673217773
+      ],
+      "start_yaw": -2.9047239664815043,
+      "shortest_geodesic_m": 19.864,
+      "eligible_targets": {
+        "sofa": 19.864
+      },
+      "start_rooms": [
+        0
+      ],
+      "episode_id": "aayBHfsNo7d:v2s20",
+      "role": "test"
+    },
+    {
+      "scene": "jtcxE69GiFV",
+      "seed": 20,
+      "target": "bed",
+      "floor_y": 0.16902202367782593,
+      "start": [
+        -14.150287628173828,
+        0.16902202367782593,
+        6.265050888061523
+      ],
+      "start_yaw": 1.2079077867988977,
+      "shortest_geodesic_m": 18.977,
+      "eligible_targets": {
+        "bed": 18.977,
+        "toilet": 21.793
+      },
+      "start_rooms": [
+        26
+      ],
+      "episode_id": "jtcxE69GiFV:v2s20",
+      "role": "test"
+    },
+    {
+      "scene": "zsNo4HB9uLZ",
+      "seed": 20,
+      "target": "tv_monitor",
+      "floor_y": 0.17162737250328064,
+      "start": [
+        2.1571455001831055,
+        0.17162737250328064,
+        -5.449416637420654
+      ],
+      "start_yaw": 1.8141057896977504,
+      "shortest_geodesic_m": 17.048,
+      "eligible_targets": {
+        "tv_monitor": 17.048
+      },
+      "start_rooms": [
+        16
+      ],
+      "episode_id": "zsNo4HB9uLZ:v2s20",
+      "role": "test"
+    },
+    {
+      "scene": "uNb9QFRL6hY",
+      "seed": 20,
+      "target": "plant",
+      "floor_y": 2.3679392337799072,
+      "start": [
+        -12.799196243286133,
+        2.3679392337799072,
+        -28.55539894104004
+      ],
+      "start_yaw": -1.5698354108426953,
+      "shortest_geodesic_m": 30.141,
+      "eligible_targets": {
+        "bed": 35.064,
+        "toilet": 34.037,
+        "plant": 30.141
+      },
+      "start_rooms": [
+        46
+      ],
+      "episode_id": "uNb9QFRL6hY:v2s20",
+      "role": "test"
+    },
+    {
+      "scene": "Z6MFQCViBuw",
+      "seed": 20,
+      "target": "bed",
+      "floor_y": 0.20952630043029785,
+      "start": [
+        22.037792205810547,
+        0.20952630043029785,
+        -13.48744010925293
+      ],
+      "start_yaw": -1.7507452727571242,
+      "shortest_geodesic_m": 19.012,
+      "eligible_targets": {
+        "bed": 19.012
+      },
+      "start_rooms": [
+        7
+      ],
+      "episode_id": "Z6MFQCViBuw:v2s20",
+      "role": "test"
+    },
+    {
+      "scene": "q9vSo1VnCiC",
+      "seed": 20,
+      "target": "toilet",
+      "floor_y": 0.08012409508228302,
+      "start": [
+        4.776196479797363,
+        0.08012409508228302,
+        6.348904609680176
+      ],
+      "start_yaw": -2.0965678749071466,
+      "shortest_geodesic_m": 11.662,
+      "eligible_targets": {
+        "toilet": 11.662,
+        "tv_monitor": 16.5
+      },
+      "start_rooms": [
+        11
+      ],
+      "episode_id": "q9vSo1VnCiC:v2s20",
+      "role": "test"
+    },
+    {
+      "scene": "r1Q1Z4BcV1o",
+      "seed": 20,
+      "target": "plant",
+      "floor_y": 0.07537198066711426,
+      "start": [
+        -24.850845336914062,
+        0.07537198066711426,
+        -15.387490272521973
+      ],
+      "start_yaw": 0.8735559489984297,
+      "shortest_geodesic_m": 33.4,
+      "eligible_targets": {
+        "toilet": 35.385,
+        "tv_monitor": 38.291,
+        "plant": 33.4
+      },
+      "start_rooms": [
+        3
+      ],
+      "episode_id": "r1Q1Z4BcV1o:v2s20",
+      "role": "test"
+    },
+    {
+      "scene": "fzynW3qQPVF",
+      "seed": 20,
+      "target": "sofa",
+      "floor_y": 0.07242774963378906,
+      "start": [
+        4.694094657897949,
+        0.07242774963378906,
+        10.09752082824707
+      ],
+      "start_yaw": -2.9565999753449046,
+      "shortest_geodesic_m": 10.06,
+      "eligible_targets": {
+        "sofa": 10.06,
+        "tv_monitor": 21.116
+      },
+      "start_rooms": [
+        13
+      ],
+      "episode_id": "fzynW3qQPVF:v2s20",
+      "role": "test"
+    },
+    {
+      "scene": "b8cTxDM8gDG",
+      "seed": 20,
+      "target": "toilet",
+      "floor_y": 0.4532742500305176,
+      "start": [
+        -21.839065551757812,
+        0.4532742500305176,
+        -2.5073914527893066
+      ],
+      "start_yaw": 0.07453579588976522,
+      "shortest_geodesic_m": 19.827,
+      "eligible_targets": {
+        "toilet": 19.827
+      },
+      "start_rooms": [
+        9
+      ],
+      "episode_id": "b8cTxDM8gDG:v2s20",
+      "role": "test"
+    },
+    {
+      "scene": "i5noydFURQK",
+      "seed": 21,
+      "target": "toilet",
+      "floor_y": -3.2131762504577637,
+      "start": [
+        2.789149284362793,
+        -3.2131762504577637,
+        10.349677085876465
+      ],
+      "start_yaw": 0.5202306730610116,
+      "shortest_geodesic_m": 12.229,
+      "eligible_targets": {
+        "toilet": 12.229
+      },
+      "start_rooms": [
+        11
+      ],
+      "episode_id": "i5noydFURQK:v2s21",
+      "role": "test"
+    },
+    {
+      "scene": "aayBHfsNo7d",
+      "seed": 21,
+      "target": "sofa",
+      "floor_y": 3.628256320953369,
+      "start": [
+        18.504680633544922,
+        3.628256320953369,
+        4.037888526916504
+      ],
+      "start_yaw": -1.6590175659675812,
+      "shortest_geodesic_m": 17.313,
+      "eligible_targets": {
+        "sofa": 17.313
+      },
+      "start_rooms": [
+        0
+      ],
+      "episode_id": "aayBHfsNo7d:v2s21",
+      "role": "test"
+    },
+    {
+      "scene": "jtcxE69GiFV",
+      "seed": 21,
+      "target": "toilet",
+      "floor_y": 0.16902202367782593,
+      "start": [
+        -15.977258682250977,
+        0.16902202367782593,
+        10.626819610595703
+      ],
+      "start_yaw": -0.7920872894537272,
+      "shortest_geodesic_m": 26.563,
+      "eligible_targets": {
+        "bed": 23.747,
+        "toilet": 26.563,
+        "tv_monitor": 13.194,
+        "plant": 12.909
+      },
+      "start_rooms": [
+        26
+      ],
+      "episode_id": "jtcxE69GiFV:v2s21",
+      "role": "test"
+    },
+    {
+      "scene": "zsNo4HB9uLZ",
+      "seed": 21,
+      "target": "tv_monitor",
+      "floor_y": 0.17162737250328064,
+      "start": [
+        8.525436401367188,
+        0.17162737250328064,
+        -5.084188938140869
+      ],
+      "start_yaw": -1.7313556165265767,
+      "shortest_geodesic_m": 19.138,
+      "eligible_targets": {
+        "tv_monitor": 19.138
+      },
+      "start_rooms": [
+        5
+      ],
+      "episode_id": "zsNo4HB9uLZ:v2s21",
+      "role": "test"
+    },
+    {
+      "scene": "uNb9QFRL6hY",
+      "seed": 21,
+      "target": "bed",
+      "floor_y": 2.7615439891815186,
+      "start": [
+        -2.894336700439453,
+        2.7615439891815186,
+        -10.576908111572266
+      ],
+      "start_yaw": 0.20360667602485538,
+      "shortest_geodesic_m": 13.842,
+      "eligible_targets": {
+        "bed": 13.842
+      },
+      "start_rooms": [
+        53
+      ],
+      "episode_id": "uNb9QFRL6hY:v2s21",
+      "role": "test"
+    },
+    {
+      "scene": "Z6MFQCViBuw",
+      "seed": 21,
+      "target": "bed",
+      "floor_y": 0.19037222862243652,
+      "start": [
+        8.37699031829834,
+        0.19037222862243652,
+        -6.026251792907715
+      ],
+      "start_yaw": 2.817140289048732,
+      "shortest_geodesic_m": 16.083,
+      "eligible_targets": {
+        "bed": 16.083,
+        "sofa": 21.062
+      },
+      "start_rooms": [
+        3
+      ],
+      "episode_id": "Z6MFQCViBuw:v2s21",
+      "role": "test"
+    },
+    {
+      "scene": "q9vSo1VnCiC",
+      "seed": 21,
+      "target": "tv_monitor",
+      "floor_y": 0.08012409508228302,
+      "start": [
+        -5.787198543548584,
+        0.08012409508228302,
+        8.29679012298584
+      ],
+      "start_yaw": -0.23862642552991842,
+      "shortest_geodesic_m": 11.613,
+      "eligible_targets": {
+        "toilet": 10.761,
+        "tv_monitor": 11.613
+      },
+      "start_rooms": [
+        8
+      ],
+      "episode_id": "q9vSo1VnCiC:v2s21",
+      "role": "test"
+    },
+    {
+      "scene": "r1Q1Z4BcV1o",
+      "seed": 21,
+      "target": "tv_monitor",
+      "floor_y": 0.07537198066711426,
+      "start": [
+        -26.68512725830078,
+        0.07537198066711426,
+        -18.21454620361328
+      ],
+      "start_yaw": 3.0007564404856764,
+      "shortest_geodesic_m": 46.294,
+      "eligible_targets": {
+        "toilet": 37.42,
+        "tv_monitor": 46.294,
+        "plant": 41.403
+      },
+      "start_rooms": [
+        13
+      ],
+      "episode_id": "r1Q1Z4BcV1o:v2s21",
+      "role": "test"
+    },
+    {
+      "scene": "fzynW3qQPVF",
+      "seed": 21,
+      "target": "toilet",
+      "floor_y": 0.07242774963378906,
+      "start": [
+        11.867586135864258,
+        0.07242774963378906,
+        10.591928482055664
+      ],
+      "start_yaw": -1.119604273951706,
+      "shortest_geodesic_m": 11.529,
+      "eligible_targets": {
+        "bed": 10.378,
+        "toilet": 11.529,
+        "tv_monitor": 15.69
+      },
+      "start_rooms": [
+        14
+      ],
+      "episode_id": "fzynW3qQPVF:v2s21",
+      "role": "test"
+    },
+    {
+      "scene": "b8cTxDM8gDG",
+      "seed": 21,
+      "target": "toilet",
+      "floor_y": 0.4532742500305176,
+      "start": [
+        -26.35263442993164,
+        0.4532742500305176,
+        -0.383748859167099
+      ],
+      "start_yaw": -1.6731042231324675,
+      "shortest_geodesic_m": 23.55,
+      "eligible_targets": {
+        "toilet": 23.55
+      },
+      "start_rooms": [
+        9
+      ],
+      "episode_id": "b8cTxDM8gDG:v2s21",
+      "role": "test"
+    },
+    {
+      "scene": "i5noydFURQK",
+      "seed": 22,
+      "target": "toilet",
+      "floor_y": -3.2131762504577637,
+      "start": [
+        0.1037697046995163,
+        -3.2131762504577637,
+        9.666122436523438
+      ],
+      "start_yaw": -0.8224118690250108,
+      "shortest_geodesic_m": 10.287,
+      "eligible_targets": {
+        "toilet": 10.287
+      },
+      "start_rooms": [
+        11
+      ],
+      "episode_id": "i5noydFURQK:v2s22",
+      "role": "test"
+    },
+    {
+      "scene": "aayBHfsNo7d",
+      "seed": 22,
+      "target": "tv_monitor",
+      "floor_y": 0.028256431221961975,
+      "start": [
+        0.5597161054611206,
+        0.028256431221961975,
+        4.57275915145874
+      ],
+      "start_yaw": -2.726154182577196,
+      "shortest_geodesic_m": 10.441,
+      "eligible_targets": {
+        "tv_monitor": 10.441
+      },
+      "start_rooms": [
+        15
+      ],
+      "episode_id": "aayBHfsNo7d:v2s22",
+      "role": "test"
+    },
+    {
+      "scene": "jtcxE69GiFV",
+      "seed": 22,
+      "target": "bed",
+      "floor_y": 0.16902202367782593,
+      "start": [
+        -9.62208080291748,
+        0.16902202367782593,
+        6.184534072875977
+      ],
+      "start_yaw": -2.1888382507796886,
+      "shortest_geodesic_m": 14.879,
+      "eligible_targets": {
+        "bed": 14.879,
+        "toilet": 17.695
+      },
+      "start_rooms": [
+        34
+      ],
+      "episode_id": "jtcxE69GiFV:v2s22",
+      "role": "test"
+    },
+    {
+      "scene": "zsNo4HB9uLZ",
+      "seed": 22,
+      "target": "tv_monitor",
+      "floor_y": 0.17162737250328064,
+      "start": [
+        -1.0606545209884644,
+        0.17162737250328064,
+        -3.8494935035705566
+      ],
+      "start_yaw": 1.7725018026205257,
+      "shortest_geodesic_m": 19.16,
+      "eligible_targets": {
+        "tv_monitor": 19.16
+      },
+      "start_rooms": [
+        1
+      ],
+      "episode_id": "zsNo4HB9uLZ:v2s22",
+      "role": "test"
+    },
+    {
+      "scene": "uNb9QFRL6hY",
+      "seed": 22,
+      "target": "bed",
+      "floor_y": 0.5615441799163818,
+      "start": [
+        -13.528261184692383,
+        0.5615441799163818,
+        -22.455957412719727
+      ],
+      "start_yaw": -2.8209792073399624,
+      "shortest_geodesic_m": 26.248,
+      "eligible_targets": {
+        "bed": 26.248,
+        "toilet": 27.603
+      },
+      "start_rooms": [
+        45
+      ],
+      "episode_id": "uNb9QFRL6hY:v2s22",
+      "role": "test"
+    },
+    {
+      "scene": "Z6MFQCViBuw",
+      "seed": 22,
+      "target": "sofa",
+      "floor_y": 0.009526252746582031,
+      "start": [
+        1.6491014957427979,
+        0.009526252746582031,
+        -6.132960796356201
+      ],
+      "start_yaw": -2.4451535506258875,
+      "shortest_geodesic_m": 10.797,
+      "eligible_targets": {
+        "sofa": 10.797
+      },
+      "start_rooms": [
+        1
+      ],
+      "episode_id": "Z6MFQCViBuw:v2s22",
+      "role": "test"
+    },
+    {
+      "scene": "q9vSo1VnCiC",
+      "seed": 22,
+      "target": "toilet",
+      "floor_y": 0.08012409508228302,
+      "start": [
+        -11.638208389282227,
+        0.08012409508228302,
+        -4.456884384155273
+      ],
+      "start_yaw": -3.134129181756794,
+      "shortest_geodesic_m": 12.224,
+      "eligible_targets": {
+        "toilet": 12.224,
+        "sofa": 11.982
+      },
+      "start_rooms": [
+        1
+      ],
+      "episode_id": "q9vSo1VnCiC:v2s22",
+      "role": "test"
+    },
+    {
+      "scene": "r1Q1Z4BcV1o",
+      "seed": 22,
+      "target": "tv_monitor",
+      "floor_y": 0.07537198066711426,
+      "start": [
+        -7.15461540222168,
+        0.07537198066711426,
+        12.467626571655273
+      ],
+      "start_yaw": -0.21592577134162205,
+      "shortest_geodesic_m": 17.674,
+      "eligible_targets": {
+        "toilet": 14.767,
+        "tv_monitor": 17.674
+      },
+      "start_rooms": [
+        12
+      ],
+      "episode_id": "r1Q1Z4BcV1o:v2s22",
+      "role": "test"
+    },
+    {
+      "scene": "fzynW3qQPVF",
+      "seed": 22,
+      "target": "toilet",
+      "floor_y": 0.07242774963378906,
+      "start": [
+        11.51557731628418,
+        0.07242774963378906,
+        11.468994140625
+      ],
+      "start_yaw": 0.48741959420220393,
+      "shortest_geodesic_m": 11.269,
+      "eligible_targets": {
+        "bed": 10.118,
+        "toilet": 11.269,
+        "tv_monitor": 16.301
+      },
+      "start_rooms": [
+        14
+      ],
+      "episode_id": "fzynW3qQPVF:v2s22",
+      "role": "test"
+    },
+    {
+      "scene": "b8cTxDM8gDG",
+      "seed": 22,
+      "target": "toilet",
+      "floor_y": 0.4532742500305176,
+      "start": [
+        -24.946535110473633,
+        0.4532742500305176,
+        -4.395465850830078
+      ],
+      "start_yaw": -2.3947754150748555,
+      "shortest_geodesic_m": 23.449,
+      "eligible_targets": {
+        "toilet": 23.449
+      },
+      "start_rooms": [
+        9
+      ],
+      "episode_id": "b8cTxDM8gDG:v2s22",
+      "role": "test"
+    },
+    {
+      "scene": "i5noydFURQK",
+      "seed": 23,
+      "target": "toilet",
+      "floor_y": -3.2131762504577637,
+      "start": [
+        2.777615547180176,
+        -3.2131762504577637,
+        9.872634887695312
+      ],
+      "start_yaw": -2.644963483143554,
+      "shortest_geodesic_m": 11.801,
+      "eligible_targets": {
+        "toilet": 11.801
+      },
+      "start_rooms": [
+        11
+      ],
+      "episode_id": "i5noydFURQK:v2s23",
+      "role": "test"
+    },
+    {
+      "scene": "aayBHfsNo7d",
+      "seed": 23,
+      "target": "tv_monitor",
+      "floor_y": 0.028256431221961975,
+      "start": [
+        -0.2639777660369873,
+        0.028256431221961975,
+        5.255195617675781
+      ],
+      "start_yaw": -0.09032032045127325,
+      "shortest_geodesic_m": 11.408,
+      "eligible_targets": {
+        "tv_monitor": 11.408
+      },
+      "start_rooms": [
+        16
+      ],
+      "episode_id": "aayBHfsNo7d:v2s23",
+      "role": "test"
+    },
+    {
+      "scene": "jtcxE69GiFV",
+      "seed": 23,
+      "target": "tv_monitor",
+      "floor_y": 3.3690218925476074,
+      "start": [
+        0.09105603396892548,
+        3.3690218925476074,
+        7.26051664352417
+      ],
+      "start_yaw": -0.9097096949906929,
+      "shortest_geodesic_m": 13.313,
+      "eligible_targets": {
+        "tv_monitor": 13.313
+      },
+      "start_rooms": [
+        4
+      ],
+      "episode_id": "jtcxE69GiFV:v2s23",
+      "role": "test"
+    },
+    {
+      "scene": "zsNo4HB9uLZ",
+      "seed": 23,
+      "target": "tv_monitor",
+      "floor_y": 0.17162737250328064,
+      "start": [
+        -0.07045574486255646,
+        0.17162737250328064,
+        -2.7368171215057373
+      ],
+      "start_yaw": 1.43789965719981,
+      "shortest_geodesic_m": 18.495,
+      "eligible_targets": {
+        "tv_monitor": 18.495
+      },
+      "start_rooms": [
+        1
+      ],
+      "episode_id": "zsNo4HB9uLZ:v2s23",
+      "role": "test"
+    },
+    {
+      "scene": "uNb9QFRL6hY",
+      "seed": 23,
+      "target": "toilet",
+      "floor_y": 0.1615440845489502,
+      "start": [
+        -13.04922103881836,
+        0.1615440845489502,
+        -18.24789810180664
+      ],
+      "start_yaw": 1.6289734815567778,
+      "shortest_geodesic_m": 19.086,
+      "eligible_targets": {
+        "bed": 22.054,
+        "toilet": 19.086
+      },
+      "start_rooms": [
+        13
+      ],
+      "episode_id": "uNb9QFRL6hY:v2s23",
+      "role": "test"
+    },
+    {
+      "scene": "Z6MFQCViBuw",
+      "seed": 23,
+      "target": "sofa",
+      "floor_y": 0.009526252746582031,
+      "start": [
+        29.491436004638672,
+        0.009526252746582031,
+        4.43289041519165
+      ],
+      "start_yaw": -0.05521898143586057,
+      "shortest_geodesic_m": 27.5,
+      "eligible_targets": {
+        "bed": 36.69,
+        "sofa": 27.5
+      },
+      "start_rooms": [
+        4
+      ],
+      "episode_id": "Z6MFQCViBuw:v2s23",
+      "role": "test"
+    },
+    {
+      "scene": "q9vSo1VnCiC",
+      "seed": 23,
+      "target": "tv_monitor",
+      "floor_y": 0.08012409508228302,
+      "start": [
+        1.296303629875183,
+        0.08012409508228302,
+        6.643774509429932
+      ],
+      "start_yaw": -0.3343566083271643,
+      "shortest_geodesic_m": 12.679,
+      "eligible_targets": {
+        "tv_monitor": 12.679
+      },
+      "start_rooms": [
+        9
+      ],
+      "episode_id": "q9vSo1VnCiC:v2s23",
+      "role": "test"
+    },
+    {
+      "scene": "r1Q1Z4BcV1o",
+      "seed": 23,
+      "target": "toilet",
+      "floor_y": 0.07537198066711426,
+      "start": [
+        -21.309986114501953,
+        0.07537198066711426,
+        -13.661822319030762
+      ],
+      "start_yaw": 1.3253918696779463,
+      "shortest_geodesic_m": 33.133,
+      "eligible_targets": {
+        "toilet": 33.133,
+        "tv_monitor": 36.039,
+        "plant": 31.149
+      },
+      "start_rooms": [
+        3
+      ],
+      "episode_id": "r1Q1Z4BcV1o:v2s23",
+      "role": "test"
+    },
+    {
+      "scene": "fzynW3qQPVF",
+      "seed": 23,
+      "target": "toilet",
+      "floor_y": 0.07242774963378906,
+      "start": [
+        22.45801544189453,
+        0.07242774963378906,
+        -11.336423873901367
+      ],
+      "start_yaw": -1.756916030136184,
+      "shortest_geodesic_m": 17.14,
+      "eligible_targets": {
+        "toilet": 17.14
+      },
+      "start_rooms": [
+        20
+      ],
+      "episode_id": "fzynW3qQPVF:v2s23",
+      "role": "test"
+    },
+    {
+      "scene": "b8cTxDM8gDG",
+      "seed": 23,
+      "target": "toilet",
+      "floor_y": 0.4532742500305176,
+      "start": [
+        -22.261791229248047,
+        0.4532742500305176,
+        -1.1287546157836914
+      ],
+      "start_yaw": 2.176076159161272,
+      "shortest_geodesic_m": 19.545,
+      "eligible_targets": {
+        "toilet": 19.545
+      },
+      "start_rooms": [
+        9
+      ],
+      "episode_id": "b8cTxDM8gDG:v2s23",
+      "role": "test"
+    },
+    {
+      "scene": "i5noydFURQK",
+      "seed": 24,
+      "target": "toilet",
+      "floor_y": -3.2131762504577637,
+      "start": [
+        2.765838623046875,
+        -3.2131762504577637,
+        9.943671226501465
+      ],
+      "start_yaw": -1.9814690526676182,
+      "shortest_geodesic_m": 11.846,
+      "eligible_targets": {
+        "toilet": 11.846
+      },
+      "start_rooms": [
+        11
+      ],
+      "episode_id": "i5noydFURQK:v2s24",
+      "role": "test"
+    },
+    {
+      "scene": "aayBHfsNo7d",
+      "seed": 24,
+      "target": "sofa",
+      "floor_y": 3.628256320953369,
+      "start": [
+        19.101348876953125,
+        3.628256320953369,
+        6.732154846191406
+      ],
+      "start_yaw": 1.6386907792841638,
+      "shortest_geodesic_m": 18.438,
+      "eligible_targets": {
+        "sofa": 18.438
+      },
+      "start_rooms": [
+        0
+      ],
+      "episode_id": "aayBHfsNo7d:v2s24",
+      "role": "test"
+    },
+    {
+      "scene": "jtcxE69GiFV",
+      "seed": 24,
+      "target": "toilet",
+      "floor_y": 0.16902202367782593,
+      "start": [
+        -11.91112995147705,
+        0.16902202367782593,
+        -3.472238779067993
+      ],
+      "start_yaw": -0.8223864810771842,
+      "shortest_geodesic_m": 17.361,
+      "eligible_targets": {
+        "bed": 14.545,
+        "toilet": 17.361,
+        "plant": 10.066
+      },
+      "start_rooms": [
+        25
+      ],
+      "episode_id": "jtcxE69GiFV:v2s24",
+      "role": "test"
+    },
+    {
+      "scene": "zsNo4HB9uLZ",
+      "seed": 24,
+      "target": "tv_monitor",
+      "floor_y": 0.17162737250328064,
+      "start": [
+        4.947608470916748,
+        0.17162737250328064,
+        -0.4462204873561859
+      ],
+      "start_yaw": -1.4648808561866422,
+      "shortest_geodesic_m": 11.121,
+      "eligible_targets": {
+        "tv_monitor": 11.121
+      },
+      "start_rooms": [
+        17
+      ],
+      "episode_id": "zsNo4HB9uLZ:v2s24",
+      "role": "test"
+    },
+    {
+      "scene": "uNb9QFRL6hY",
+      "seed": 24,
+      "target": "bed",
+      "floor_y": 2.7615439891815186,
+      "start": [
+        -5.580079078674316,
+        2.7615439891815186,
+        -10.899463653564453
+      ],
+      "start_yaw": -0.060716165413661205,
+      "shortest_geodesic_m": 11.214,
+      "eligible_targets": {
+        "bed": 11.214
+      },
+      "start_rooms": [
+        48
+      ],
+      "episode_id": "uNb9QFRL6hY:v2s24",
+      "role": "test"
+    },
+    {
+      "scene": "Z6MFQCViBuw",
+      "seed": 24,
+      "target": "bed",
+      "floor_y": 0.009526252746582031,
+      "start": [
+        16.050039291381836,
+        0.009526252746582031,
+        0.975749671459198
+      ],
+      "start_yaw": -3.0662101344547668,
+      "shortest_geodesic_m": 22.62,
+      "eligible_targets": {
+        "bed": 22.62,
+        "sofa": 27.599
+      },
+      "start_rooms": [
+        3
+      ],
+      "episode_id": "Z6MFQCViBuw:v2s24",
+      "role": "test"
+    },
+    {
+      "scene": "q9vSo1VnCiC",
+      "seed": 24,
+      "target": "toilet",
+      "floor_y": 0.08012409508228302,
+      "start": [
+        8.469978332519531,
+        0.08012409508228302,
+        7.833316802978516
+      ],
+      "start_yaw": 0.2912462700613254,
+      "shortest_geodesic_m": 13.976,
+      "eligible_targets": {
+        "toilet": 13.976,
+        "tv_monitor": 20.237
+      },
+      "start_rooms": [
+        11
+      ],
+      "episode_id": "q9vSo1VnCiC:v2s24",
+      "role": "test"
+    },
+    {
+      "scene": "r1Q1Z4BcV1o",
+      "seed": 24,
+      "target": "toilet",
+      "floor_y": 0.07537198066711426,
+      "start": [
+        -4.015117645263672,
+        0.07537198066711426,
+        -4.049176216125488
+      ],
+      "start_yaw": -1.1073036647196632,
+      "shortest_geodesic_m": 10.816,
+      "eligible_targets": {
+        "toilet": 10.816,
+        "tv_monitor": 13.722
+      },
+      "start_rooms": [
+        10
+      ],
+      "episode_id": "r1Q1Z4BcV1o:v2s24",
+      "role": "test"
+    },
+    {
+      "scene": "fzynW3qQPVF",
+      "seed": 24,
+      "target": "bed",
+      "floor_y": 0.07242774963378906,
+      "start": [
+        24.712997436523438,
+        0.07242774963378906,
+        0.47830918431282043
+      ],
+      "start_yaw": -0.04375759120828038,
+      "shortest_geodesic_m": 13.262,
+      "eligible_targets": {
+        "bed": 13.262,
+        "toilet": 21.318
+      },
+      "start_rooms": [
+        30
+      ],
+      "episode_id": "fzynW3qQPVF:v2s24",
+      "role": "test"
+    },
+    {
+      "scene": "b8cTxDM8gDG",
+      "seed": 24,
+      "target": "bed",
+      "floor_y": 0.053273916244506836,
+      "start": [
+        -3.9731361865997314,
+        0.053273916244506836,
+        1.9567630290985107
+      ],
+      "start_yaw": -1.2232341299386835,
+      "shortest_geodesic_m": 15.01,
+      "eligible_targets": {
+        "bed": 15.01,
+        "plant": 13.872
+      },
+      "start_rooms": [
+        14
+      ],
+      "episode_id": "b8cTxDM8gDG:v2s24",
+      "role": "test"
+    }
+  ],
+  "skipped": [
+    {
+      "scene": "pLe4wQe7qrG",
+      "seed": 20
+    },
+    {
+      "scene": "dhjEzFoUFzH",
+      "seed": 20
+    },
+    {
+      "scene": "pLe4wQe7qrG",
+      "seed": 21
+    },
+    {
+      "scene": "dhjEzFoUFzH",
+      "seed": 21
+    },
+    {
+      "scene": "pLe4wQe7qrG",
+      "seed": 22
+    },
+    {
+      "scene": "dhjEzFoUFzH",
+      "seed": 22
+    },
+    {
+      "scene": "pLe4wQe7qrG",
+      "seed": 23
+    },
+    {
+      "scene": "dhjEzFoUFzH",
+      "seed": 23
+    },
+    {
+      "scene": "pLe4wQe7qrG",
+      "seed": 24
+    },
+    {
+      "scene": "dhjEzFoUFzH",
+      "seed": 24
+    }
+  ]
+}
