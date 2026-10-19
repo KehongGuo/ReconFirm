@@ -39,7 +39,7 @@ STAND_MIN_M, STAND_MAX_M = 0.6, 0.9   # dog standoff band from the object's own 
                                        # camera against a bed post, 8 looks "none" (Z6MFQCViBuw:v2s20)
 MAX_REPOSITIONS = 4                    # per candidate: two standoffs alternated for 60 s (p53SfW6mjZe:12)
 REPOSITION_S = 8.0                     # at a candidate this long with nothing to do: stand elsewhere
-DOG_EXPLORES = True    # large buildings: the dog searches too (HM3D's small scenes: off, hm3d_eval.py)
+DOG_EXPLORES = True    # the dog searches too (--dog-explores no: it waits for a gated candidate; HM3D's homes)
 NO_STANDOFF_S = 20.0                   # a requested candidate with no reachable standoff this long is dropped
 
 
@@ -51,7 +51,10 @@ def is_service_error(exc):
     if 'Daily USD' in msg or 'budget' in msg.lower():
         return False
     return isinstance(exc, (TimeoutError, socket.timeout, ConnectionError, OSError)) or \
-        (isinstance(exc, RuntimeError) and ('HTTP' in msg or 'status' in msg)) or \
+        (isinstance(exc, RuntimeError) and ('HTTP' in msg or 'status' in msg or
+                                             # jev.py's transport failure: it crashed whole missions (MP3D dev
+                                             # yqstnuAEVhm:v2s12 twice, a Jev frontier score at t = 0)
+                                             'connection failed' in msg or 'timed out' in msg)) or \
         type(exc).__module__.startswith(('requests', 'urllib3', 'httpx'))
 FIELD_EVERY = 10
 BRAIN_FIRST_S = 2.5
@@ -72,10 +75,15 @@ LOOK_EVERY_S = 3.0        # the dog at a candidate retries its own look this oft
 MEET_TIMEOUT_S = 40.0     # the dog gives up a rendezvous after this long
 # Hybrid scheduler: the brain ranks frontiers, a Hungarian assignment does
 # the geometry. Cost of sending robot r to frontier f, in seconds:
-#   travel(r, f) / speed(r) + RANK_S * rank(f) + DUP_S * [f already targeted]
+#   travel(r, f) / speed(r) + RANK_S * rank(f)   (+ DUP_S when it must share an already targeted f)
 #   - SIZE_BONUS_M * min(width_m, 4) / speed(r)
 RANK_S = 6.0
 DUP_S = 8.0
+# --frontier-cost pt: search theory's p/t rule instead of the rank penalty. Jev scores each frontier with a calibrated
+# P(target beyond it) and a robot goes where travel time / P is smallest, so a likely exit far away and an unlikely one
+# next door trade off by how likely and how far, not by a fixed 6 s per rank step.
+P_FLOOR = 0.05                # a frontier Jev calls hopeless still costs a finite (20x) travel time
+MIN_TRAVEL_S = 0.5            # the size bonus can take travel time to <= 0, where dividing by P would favour low P
 SIZE_BONUS_M = 0.5
 EXPLORE_HYSTERESIS_S = 8.0   # an explore task younger than this is not reassigned
 HYBRID_BRAIN_PERIOD_S = 20.0
@@ -93,8 +101,10 @@ RECHARGE_BELOW_FRACTION = 0.5
 class Runner:
     def __init__(self, episode, allocation, drone_local, dog_local, detector, server, jev,
                  out_dir=None, video=False, clock='charged', mission_s=MISSION_S, declare_roles=('dog',),
-                 experience=None, localizer=None, localize_mode='box', scheduler='hybrid'):
+                 experience=None, localizer=None, localize_mode='box', scheduler='hybrid', frontier_cost='rank'):
         self.sched = scheduler
+        self.pt = frontier_cost == 'pt'
+        self.fp, self.fp_t = {}, -math.inf       # pt: the judge's P(target beyond frontier), when last asked
         self.order, self.order_t = [], -math.inf
         self._idle = []
         self._home = {}
@@ -109,7 +119,7 @@ class Runner:
         # (the literature baseline); jev: no VLM scheduler, Jev ranks frontiers (J3).
         self.brain = (ag.Brain(server, hybrid=(scheduler == 'hybrid' and allocation == 'brain'))
                       if allocation in ('brain', 'direct') else None)
-        self.jev_ranker = jev if allocation == 'jev' else None
+        self.jev_ranker = jev if allocation == 'jev' or self.pt else None
         self.rank_inflight = False
         self.dec = {'drone': ag.make_decider(drone_local, jev, server),
                     'dog': ag.make_decider(dog_local, jev, server)}
@@ -247,7 +257,14 @@ class Runner:
             self.order = [f for f in self.order if f in self.registry.active]
             shown = sorted(self.registry.active.values(), key=lambda f: min(f['cost'].values()))[:board.MAX_FRONTIERS]
             stale = any(f['id'] not in self.order for f in shown) and self.t - self.order_t >= 6.0
-            if stale and self.jev_ranker is not None and not self.rank_inflight:
+            if self.pt:
+                # Jev scores the shown exits whenever new ones appear; the brain keeps its own cadence for tasks
+                if any(f['id'] not in self.fp for f in shown) and self.t - self.fp_t >= 6.0 and not self.rank_inflight:
+                    self.fp_t = self.t
+                    self.jev_rank(shown)
+                if stale and self.brain is not None:
+                    self.brain_wanted = True
+            elif stale and self.jev_ranker is not None and not self.rank_inflight:
                 self.jev_rank(shown)
             elif stale and self.brain is not None:
                 self.brain_wanted = True
@@ -273,7 +290,7 @@ class Runner:
         self.latency['jev'].append(latency)
         self.rank_inflight = True
         self.log('jev_rank', order=order, p={k: round(v, 3) for k, v in p.items()}, latency_s=round(latency, 3))
-        self.schedule(self.charge(latency, False), 'jev_order', {'order': order})
+        self.schedule(self.charge(latency, False), 'jev_order', {'order': order, 'p': p})
 
     def dock_cell(self, name, dog):
         """Nearest air-reachable cell within docking range of the dog."""
@@ -904,7 +921,7 @@ class Runner:
     def allocate(self, names, reassign=False):
         """Jointly send robots to frontiers (Hungarian). With a brain, its
         search_order adds RANK_S per rank step; without one, pure geometry. With
-        DOG_EXPLORES off (HM3D), the dog waits and moves only for a gated candidate."""
+        DOG_EXPLORES off, the dog waits and moves only for a gated candidate."""
         from scipy.optimize import linear_sum_assignment
         fr = list(self.registry.active.values())
         names = [n for n in names if self.active(n) and (DOG_EXPLORES or n != DOG)]
@@ -917,6 +934,8 @@ class Runner:
         big = 1e6
         C = np.full((len(names), len(fr)), big)
         res = self.world.map.res
+        pt = getattr(self, 'pt', False)
+        prior = float(np.median(list(self.fp.values()))) if pt and self.fp else 0.5   # an exit Jev has not scored yet
         for i, n in enumerate(names):
             b, usable = self.body(n), self.usable(n)
             for j, f in enumerate(fr):
@@ -924,13 +943,20 @@ class Runner:
                     continue
                 if b.aerial and not ag.affordable(self.world, n, f['goal'][n]):
                     continue
-                C[i, j] = ((f['cost'][n] - SIZE_BONUS_M * min(f['size'] * res, 4.0)) / b.speed
-                           + RANK_S * rank.get(f['id'], unranked) + (DUP_S if f['id'] in taken else 0.0))
-        rows, cols = linear_sum_assignment(C)
-        chosen = {names[i]: fr[j] for i, j in zip(rows, cols) if C[i, j] < big}
-        for i, n in enumerate(names):            # more robots than frontiers: share, with the penalty
+                travel = (f['cost'][n] - SIZE_BONUS_M * min(f['size'] * res, 4.0)) / b.speed
+                if pt:
+                    C[i, j] = max(travel, MIN_TRAVEL_S) / max(self.fp.get(f['id'], prior), P_FLOOR)
+                else:
+                    C[i, j] = travel + RANK_S * rank.get(f['id'], unranked)
+        # A frontier another explorer already holds is out of the assignment while a free one is usable: as a cost
+        # (DUP_S) it was cheaper than two rank steps, and a lone idle drone joined the top-ranked frontier instead of
+        # taking the third (MP3D 300 s: >= 2 drones on one frontier 42% of the time with a search order, 14% without).
+        free = np.array([f['id'] not in taken for f in fr])
+        rows, cols = linear_sum_assignment(np.where(free, C, big))
+        chosen = {names[i]: fr[j] for i, j in zip(rows, cols) if C[i, j] < big and free[j]}
+        for i, n in enumerate(names):            # more robots than free frontiers: share, with the penalty
             if n not in chosen and np.min(C[i]) < big:
-                j = int(np.argmin(C[i] + DUP_S))
+                j = int(np.argmin(C[i] + DUP_S * ~free))
                 chosen[n] = fr[j]
         for n, f in chosen.items():
             cur = self.tasks.get(n)
@@ -1197,8 +1223,11 @@ class Runner:
                     self.apply_plan(pl['reply'])
                 elif kind == 'jev_order':
                     self.rank_inflight = False
-                    self.order = [f for f in pl['order'] if f in self.registry.active]
-                    self.order_t = self.t
+                    if self.pt:
+                        self.fp.update(pl['p'])
+                    else:
+                        self.order = [f for f in pl['order'] if f in self.registry.active]
+                        self.order_t = self.t
                     self.reassign_explorers()
                 elif kind == 'frontier_choice':
                     n = pl['robot']
@@ -1491,6 +1520,7 @@ class Runner:
             return round(float(np.percentile(xs, q)), 3) if xs else None
         summary = {
             'episode_id': self.ep['episode_id'], 'target': self.target, 'allocation': self.allocation,
+            'frontier_cost': 'pt' if self.pt else 'rank', 'dog_explores': DOG_EXPLORES,
             'drone_local': self.dec['drone'].kind, 'dog_local': self.dec['dog'].kind, 'clock': self.clock,
             **self.result, 'success': success, 'time_s': self.result['t'],
             'spl': round(self.ep['shortest_geodesic_m'] / max(dog.travelled, self.ep['shortest_geodesic_m']), 4)
@@ -1614,6 +1644,10 @@ def main():
     ap.add_argument('--episodes', required=True)
     ap.add_argument('--episode-id', required=True)
     ap.add_argument('--allocation', choices=['geometric', 'brain', 'direct', 'jev'], required=True)
+    ap.add_argument('--dog-explores', choices=['yes', 'no'], default='yes',
+                    help='no: the legged robot takes no frontiers and moves only for a gated candidate')
+    ap.add_argument('--frontier-cost', choices=['rank', 'pt'], default='rank',
+                    help='brain allocation: travel + RANK_S * rank (rank), or travel / judge P(target beyond) (pt)')
     ap.add_argument('--drone-local', choices=['rule', 'jev', 'vlm'], required=True)
     ap.add_argument('--dog-local', choices=['rule', 'jev', 'vlm'], required=True)
     ap.add_argument('--clock', choices=['charged', 'free'], default='charged')
@@ -1643,7 +1677,9 @@ def main():
         team_experience_v3.install(a.experience, ep, learn=a.experience_learn)
     elif a.experience_learn:
         raise SystemExit('--experience-learn needs a case-memory store (team_experience_v3.py build)')
-    needs_jev = 'jev' in (a.drone_local, a.dog_local, a.allocation)
+    global DOG_EXPLORES
+    DOG_EXPLORES = a.dog_explores == 'yes'
+    needs_jev = 'jev' in (a.drone_local, a.dog_local, a.allocation) or a.frontier_cost == 'pt'   # pt: the judge scores frontiers
     if needs_jev and not a.allow_paid_inference:
         raise SystemExit('a jev decider needs --allow-paid-inference')
     if a.allocation in ('direct', 'jev') and a.scheduler != 'hybrid':
@@ -1670,7 +1706,7 @@ def main():
     r = Runner(ep, a.allocation, a.drone_local, a.dog_local, load_detector(), server, jev, out_dir=out,
                video=a.video, clock=a.clock, mission_s=a.mission_s, declare_roles=roles, experience=experience,
                localizer=localizer, localize_mode='mask' if a.localize == 'mask' else 'box',
-               scheduler=a.scheduler)
+               scheduler=a.scheduler, frontier_cost=a.frontier_cost)
     s = r.run()
     print(json.dumps({k: s[k] for k in ('episode_id', 'allocation', 'drone_local', 'dog_local', 'clock',
                                         'outcome', 'time_s', 'dog_trips', 'dog_empty_runs', 'dog_path_m',

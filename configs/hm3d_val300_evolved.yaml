@@ -8,3 +8,4 @@ episodes: data/episodes/team_episodes_hm3d_val300.json
 conditions: [ours]
 memory: {store: memory/frozen.json, learn: false}
 verifier: {model: r1}
+dog_explores: false

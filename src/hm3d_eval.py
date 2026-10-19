@@ -1,11 +1,10 @@
 """HM3D ObjectNav evaluation entry (run.py with `dataset: hm3d`).
 
-Same runner and arguments as team_run.py; it patches the core at run time for the benchmark only:
-the naming standard (category_standard: detector aliases, what counts as the target, category
-boundaries in the prompt, track truth from the goal objects) and the robot size and camera of the
-benchmark agent. Everything else (reflections, pictures, small objects, the dog waiting for the
-dispatch gate, 640 px cameras, the opening scan, map parameters) is the core's.
-Scoring is the core's (official < 0.1 m to a goal view point, plus the relaxed 0.12 m variant).
+Same runner, arguments and method as team_run.py. It patches the core at run time for the benchmark protocol
+only: the naming standard (category_standard: detector aliases, what counts as the target, category boundaries in
+the prompt, track truth from the goal objects) and the body and camera of the benchmark agent (with the standoff its
+camera height needs). Whether the legged robot also explores is a run option (--dog-explores; no in
+configs/hm3d_val.yaml: single-floor homes). Scoring is the core's (official < 0.1 m to a goal view point, plus the relaxed 0.12 m variant).
 
   python src/hm3d_eval.py --episodes data/episodes/team_episodes_hm3d_val.json --episode-id <id> <team_run args>
 """
@@ -28,12 +27,9 @@ def install(target):
                                                   os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'hm3d_category_standard.json'))
     search_agents.PHRASE[target] = cs.describe(target)
 
-    # --- the dog: declare within 1.0 m of the nearest object cell in sight, stand 0.6-0.9 m off:
-    # its level camera at 0.88 m (+-39.5 deg) loses a 0.4 m toilet's top closer than ~0.6 m
-    team_run.ag.DECLARE_RANGE = 1.0
-    team_run.STAND_MIN_M, team_run.STAND_MAX_M = 0.6, 0.9
+    # --- the agent's camera: at 0.88 m (+-39.5 deg) it loses a 0.4 m toilet's top closer than ~0.6 m, so its
+    # standoff ends at 0.6 m (the core's 0.85 m is for the 0.5 m legged-robot camera); declaring range is the core's
     team_run.Runner.standoff.__defaults__ = (0.35, 0.6, 1.0, None)      # (lo, hi, fallback, avoid)
-    team_run.DOG_EXPLORES = False          # small scenes: the drones search, the dog waits for the gate
 
     # --- robot size (drones ~15 cm wide; the dog as the benchmark agent moves: the scene navmeshes
     # are built with radius 0.10 m, and its camera sits on the body centre at 0.88 m)

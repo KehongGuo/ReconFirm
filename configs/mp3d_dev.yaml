@@ -1,0 +1,8 @@
+# Development set: 6 MP3D validation buildings (13 episodes, disjoint from the test buildings), for choosing between
+# scheduler variants before any test run.
+base: default.yaml
+experiment: mp3d_dev
+dataset: mp3d
+episodes: data/episodes/team_episodes_v2_validation.json
+conditions: [ours, ours_semantic, ours_semantic_rank]
+mission_s: 300

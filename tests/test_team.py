@@ -403,3 +403,54 @@ class DogHeadroomTests(unittest.TestCase):
             m.integrate(depth, eye, rot, 90.0, 0.0, stride=1)
         self.assertGreater(int(tall.occ_hits.sum()), 0)        # hits at 0.6-1.3 m block the dog with the old band
         self.assertEqual(int(low.occ_hits.sum()), 0)           # above the dog's headroom: not a wall for it
+
+
+class AllocationTests(unittest.TestCase):
+    def runner(self, order, tasks):
+        import team_run
+        r = object.__new__(team_run.Runner)
+        fr = {f: {'id': f, 'size': 10, 'cost': {'d0': 2.0}, 'goal': {'d0': (0.0, 0.0)}} for f in ('F1', 'F2', 'F3')}
+        r.registry = SimpleNamespace(active=fr)
+        r.order, r.tasks, r.world = order, tasks, SimpleNamespace(map=SimpleNamespace(res=0.1))
+        r.active = lambda n: True
+        r.body = lambda n: SimpleNamespace(aerial=False, speed=1.0)
+        r.usable = lambda n: fr
+        r.frontier_task = lambda n, fid, src: {'kind': 'explore', 'target': fid}
+        r.set_task = lambda n, t, why: tasks.__setitem__(n, t)
+        return r
+
+    def test_an_idle_drone_takes_a_free_frontier_not_the_top_ranked_one_another_drone_holds(self):
+        tasks = {'d1': {'kind': 'explore', 'target': 'F1'}, 'd2': {'kind': 'explore', 'target': 'F2'}, 'd0': None}
+        self.runner(['F1', 'F2', 'F3'], tasks).allocate(['d0'])
+        self.assertEqual(tasks['d0']['target'], 'F3')
+
+    def test_it_shares_only_when_every_frontier_is_held(self):
+        tasks = {'d1': {'kind': 'explore', 'target': 'F1'}, 'd2': {'kind': 'explore', 'target': 'F2'},
+                 'd3': {'kind': 'explore', 'target': 'F3'}, 'd0': None}
+        self.runner(['F1', 'F2', 'F3'], tasks).allocate(['d0'])
+        self.assertEqual(tasks['d0']['target'], 'F1')
+
+    def test_pt_trades_how_likely_against_how_far(self):
+        tasks = {'d0': None}
+        r = self.runner([], tasks)
+        r.registry.active['F1']['cost']['d0'] = 2.0       # next door, Jev: unlikely
+        r.registry.active['F2']['cost']['d0'] = 8.0       # four times as far, Jev: likely
+        r.registry.active['F3']['cost']['d0'] = 30.0
+        r.pt, r.fp = True, {'F1': 0.1, 'F2': 0.8, 'F3': 0.0}
+        r.allocate(['d0'])
+        self.assertEqual(tasks['d0']['target'], 'F2')      # 8 / 0.8 = 10 s beats 2 / 0.1 = 20 s
+
+    def test_pt_without_scores_is_nearest_first(self):
+        tasks = {'d0': None}
+        r = self.runner([], tasks)
+        r.registry.active['F2']['cost']['d0'] = 1.0
+        r.pt, r.fp = True, {}
+        r.allocate(['d0'])
+        self.assertEqual(tasks['d0']['target'], 'F2')
+
+
+class ServiceErrorTests(unittest.TestCase):
+    def test_a_jev_transport_failure_is_a_service_error_not_a_crash(self):
+        import team_run
+        self.assertTrue(team_run.is_service_error(RuntimeError('TypeSafe connection failed or timed out')))
+        self.assertFalse(team_run.is_service_error(RuntimeError('Daily USD budget exhausted')))

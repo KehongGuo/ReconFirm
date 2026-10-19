@@ -7,3 +7,4 @@ episodes: data/episodes/team_episodes_hm3d_train_R1.json
 conditions: [ours]
 memory: {store: memory/store.json, learn: true}
 save_crops: true
+dog_explores: false

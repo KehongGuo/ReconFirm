@@ -77,7 +77,8 @@ the simulator on another.
 conda activate scout-vllm && scripts/serve_vllm.sh 0 8010 &      # GPU 0, port 8010
 conda activate scout
 python run.py -c configs/hm3d_val.yaml gpu=1                     # HM3D val, 1000 episodes
-python run.py -c configs/mp3d_table.yaml gpu=1                   # Table I: 8 conditions x 50 missions x 2 passes
+python run.py -c configs/mp3d_table.yaml gpu=1                   # Table I: 7 conditions x 50 missions
+python run.py -c configs/mp3d_rsi.yaml gpu=1                     # Ours + RSI (LoRA server on GPU 0)
 python tools/hm3d_summary.py out/hm3d_val
 python tools/table.py out/mp3d_table
 ```
@@ -90,16 +91,30 @@ runners (for example one per GPU, each with its own VLM server and `vlm.url`) ca
 
 ### Conditions
 
+Ours assigns frontiers geometrically (Hungarian assignment on travel time) and puts every irreversible commitment
+behind the calibrated judge's two-key gates; every model call is charged to the mission clock. The other rows switch
+one part (`configs/conditions.yaml`):
+
 | name | allocation | drone decisions | legged-robot decisions | clock |
 |---|---|---|---|---|
-| `ours` | VLM ranks + assignment | judge + gates | judge + gates | charged |
-| `frontier_rules` | geometric | rules | rules | charged |
+| `ours` | geometric | judge + gates | judge + gates | charged |
+| `ours_rsi` | geometric | judge + gates | judge + gates, case memory, evolved verifier | charged |
+| `frontier_rules` (Ours w/o gates) | geometric | rules | rules | charged |
 | `vlm_direct` | VLM assigns every robot | judge + gates | judge + gates | charged |
-| `wo_gates` | VLM ranks + assignment | rules | rules | charged |
-| `wo_semantic_scheduler` | geometric | judge + gates | judge + gates | charged |
-| `gates_legged_only` | VLM ranks + assignment | rules | judge + gates | charged |
-| `gates_drones_only` | VLM ranks + assignment | judge + gates | rules | charged |
-| `latency_free` | VLM ranks + assignment | judge + gates | judge + gates | free |
+| `ours_semantic` | VLM scheduler, p/t frontier cost | judge + gates | judge + gates | charged |
+| `gates_legged_only` | geometric | rules | judge + gates | charged |
+| `gates_drones_only` | geometric | judge + gates | rules | charged |
+| `latency_free` | geometric | judge + gates | judge + gates | free |
+
+`ours_semantic` adds a VLM scheduler that proposes tasks from evidence-backed menus and orders the frontiers by travel
+time / the judge's P(target beyond the frontier) (search theory's p/t rule). On the MP3D development buildings
+(`configs/mp3d_dev.yaml`) it helped; on the test buildings it did not, while a VLM ranking helped on HM3D's homes, where
+room priors are strong. `dog_explores: false` (HM3D) keeps the legged robot for gated candidates only.
+
+Runner options for sharing the work: `scenes=[...]` / `skip_scenes=[...]` (e.g. the two largest MP3D buildings, whose
+simulator does not fit beside the VLM server on a 16 GB card: run them with the server on one GPU and the simulator on
+the other), and `order=reverse` (a second runner or machine takes the queue from the back; results copied into the
+same output directory are skipped).
 
 ## Self-evolution
 

@@ -1,7 +1,9 @@
-# HM3D ObjectNav v2 val, all 1000 episodes, our team (Table III).
+# HM3D ObjectNav v2 val, all 1000 episodes, our team (Table III). Single-floor homes: the legged robot waits for a
+# gated candidate instead of taking frontiers (the drones cover a home in seconds); everything else is the method's.
 base: default.yaml
 experiment: hm3d_val
 dataset: hm3d
 episodes: data/episodes/team_episodes_hm3d_val.json
 conditions: [ours]
 mission_s: 150
+dog_explores: false

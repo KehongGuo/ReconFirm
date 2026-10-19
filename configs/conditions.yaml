@@ -1,21 +1,26 @@
-# Team conditions (Table I of the paper). Each is one setting of the scheduler's three parts:
-#   allocation   how robots get frontiers and tasks:
-#                  brain     the VLM ranks frontiers and proposes tasks from evidence-backed menus; Hungarian
-#                            assignment routes the robots (ours)
-#                  direct    the VLM assigns every robot's frontier or task itself (Co-NavGPT style)
-#                  geometric pure geometric assignment, no VLM scheduler
-#                  jev       the judge ranks the frontiers instead of the VLM (optional variant)
-#   drone_local / dog_local   who takes each robot's candidate decisions:
-#                  jev   the calibrated judge with the two-key commitment gates
-#                  rule  detector-score and verifier-answer rules
-#                  vlm   the VLM, asked locally (optional variant)
-#   clock        charged: every model call costs its measured latency on the mission clock; free: the world waits
-ours:                   {allocation: brain,     drone_local: jev,  dog_local: jev,  clock: charged}
-frontier_rules:         {allocation: geometric, drone_local: rule, dog_local: rule, clock: charged}
-vlm_direct:             {allocation: direct,    drone_local: jev,  dog_local: jev,  clock: charged}
-wo_gates:               {allocation: brain,     drone_local: rule, dog_local: rule, clock: charged}
-wo_semantic_scheduler:  {allocation: geometric, drone_local: jev,  dog_local: jev,  clock: charged}
-gates_legged_only:      {allocation: brain,     drone_local: rule, dog_local: jev,  clock: charged}
-gates_drones_only:      {allocation: brain,     drone_local: jev,  dog_local: rule, clock: charged}
-latency_free:           {allocation: brain,     drone_local: jev,  dog_local: jev,  clock: free}
-judge_ranking:          {allocation: jev,       drone_local: jev,  dog_local: jev,  clock: charged}
+# Team conditions (Table I and the ablations). Ours: geometric assignment of frontiers plus the commitment layer --
+# the calibrated judge with the two-key gates on every irreversible commitment (dispatching the legged robot,
+# declaring the target, discarding a candidate), every model call charged to the mission clock. Each other condition
+# switches one part.
+#   allocation     geometric: Hungarian assignment on travel time (ours)
+#                  brain: a VLM scheduler proposes tasks from evidence-backed menus and ranks frontiers
+#                  direct: the VLM assigns every robot's frontier or task itself (Co-NavGPT style)
+#                  jev: the judge ranks the frontiers (optional variant)
+#   frontier_cost  (brain only) pt: travel time / the judge's calibrated P(target beyond the frontier), search
+#                  theory's p/t rule; rank: travel + 6 s per step of the VLM's ranking
+#   drone_local / dog_local   jev: the calibrated judge with the two-key commitment gates; rule: detector-score and
+#                  verifier-answer rules; vlm: the VLM asked locally (optional variant)
+#   clock          charged: every model call costs its measured latency on the mission clock; free: the world waits
+#   memory, verifier          Ours + RSI: a frozen case memory (team_experience_v3 freeze) and an evolved verifier
+#                  (a LoRA served beside the base model under this name; tools/verifier_evolve.py)
+ours:               {allocation: geometric, drone_local: jev,  dog_local: jev,  clock: charged}
+frontier_rules:     {allocation: geometric, drone_local: rule, dog_local: rule, clock: charged}   # = Ours w/o gates
+vlm_direct:         {allocation: direct,    drone_local: jev,  dog_local: jev,  clock: charged}
+ours_semantic:      {allocation: brain, frontier_cost: pt, drone_local: jev, dog_local: jev, clock: charged}
+gates_legged_only:  {allocation: geometric, drone_local: rule, dog_local: jev,  clock: charged}
+gates_drones_only:  {allocation: geometric, drone_local: jev,  dog_local: rule, clock: charged}
+latency_free:       {allocation: geometric, drone_local: jev,  dog_local: jev,  clock: free}
+ours_rsi:           {allocation: geometric, drone_local: jev,  dog_local: jev,  clock: charged,
+                     memory: memory/frozen.json, verifier: r1}
+ours_semantic_rank: {allocation: brain, frontier_cost: rank, drone_local: jev, dog_local: jev, clock: charged}
+judge_ranking:      {allocation: jev,       drone_local: jev,  dog_local: jev,  clock: charged}

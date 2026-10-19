@@ -1,0 +1,317 @@
+{
+  "kind": "team_episodes",
+  "version": 2,
+  "split": "validation",
+  "criteria": {
+    "min_geodesic_m_all_instances": 10.0,
+    "target_not_in_start_room": true
+  },
+  "team": "3 drones + 1 legged robot (dog0)",
+  "mission_s": 300.0,
+  "drone_endurance_s": 150.0,
+  "swap_s": 15.0,
+  "success": "the dog declares within 1.0 m (horizontal, OBB) of a real instance, start floor",
+  "episodes": [
+    {
+      "scene": "yqstnuAEVhm",
+      "seed": 10,
+      "target": "tv_monitor",
+      "floor_y": 3.072045087814331,
+      "start": [
+        -0.1639435589313507,
+        3.072045087814331,
+        -11.536991119384766
+      ],
+      "start_yaw": -1.8411188067783706,
+      "shortest_geodesic_m": 10.557,
+      "eligible_targets": {
+        "tv_monitor": 10.557
+      },
+      "start_rooms": [
+        24
+      ],
+      "episode_id": "yqstnuAEVhm:v2s10",
+      "role": "validation"
+    },
+    {
+      "scene": "r47D5H71a5s",
+      "seed": 10,
+      "target": "bed",
+      "floor_y": 0.0986330509185791,
+      "start": [
+        -7.447504997253418,
+        0.0986330509185791,
+        -5.607137680053711
+      ],
+      "start_yaw": -1.5242137272687657,
+      "shortest_geodesic_m": 10.361,
+      "eligible_targets": {
+        "bed": 10.361
+      },
+      "start_rooms": [
+        14
+      ],
+      "episode_id": "r47D5H71a5s:v2s10",
+      "role": "validation"
+    },
+    {
+      "scene": "sT4fr6TAbpF",
+      "seed": 10,
+      "target": "bed",
+      "floor_y": 0.05631259083747864,
+      "start": [
+        8.901895523071289,
+        0.05631259083747864,
+        -3.2157411575317383
+      ],
+      "start_yaw": 2.5374110815238904,
+      "shortest_geodesic_m": 11.056,
+      "eligible_targets": {
+        "bed": 11.056,
+        "toilet": 11.035,
+        "sofa": 12.53,
+        "tv_monitor": 10.683
+      },
+      "start_rooms": [
+        7
+      ],
+      "episode_id": "sT4fr6TAbpF:v2s10",
+      "role": "validation"
+    },
+    {
+      "scene": "qoiz87JEwZ2",
+      "seed": 10,
+      "target": "sofa",
+      "floor_y": -3.0999975204467773,
+      "start": [
+        -6.6660966873168945,
+        -3.0999975204467773,
+        -0.18581849336624146
+      ],
+      "start_yaw": -1.6569601431094898,
+      "shortest_geodesic_m": 11.609,
+      "eligible_targets": {
+        "sofa": 11.609
+      },
+      "start_rooms": [
+        6
+      ],
+      "episode_id": "qoiz87JEwZ2:v2s10",
+      "role": "validation"
+    },
+    {
+      "scene": "yqstnuAEVhm",
+      "seed": 11,
+      "target": "tv_monitor",
+      "floor_y": 3.2720448970794678,
+      "start": [
+        5.766835689544678,
+        3.2720448970794678,
+        1.3333841562271118
+      ],
+      "start_yaw": -1.4220915464959163,
+      "shortest_geodesic_m": 10.032,
+      "eligible_targets": {
+        "tv_monitor": 10.032
+      },
+      "start_rooms": [
+        18
+      ],
+      "episode_id": "yqstnuAEVhm:v2s11",
+      "role": "validation"
+    },
+    {
+      "scene": "r47D5H71a5s",
+      "seed": 11,
+      "target": "bed",
+      "floor_y": 0.0986330509185791,
+      "start": [
+        -4.647531509399414,
+        0.0986330509185791,
+        -10.500813484191895
+      ],
+      "start_yaw": -1.9955174199781163,
+      "shortest_geodesic_m": 10.905,
+      "eligible_targets": {
+        "bed": 10.905
+      },
+      "start_rooms": [
+        17
+      ],
+      "episode_id": "r47D5H71a5s:v2s11",
+      "role": "validation"
+    },
+    {
+      "scene": "sT4fr6TAbpF",
+      "seed": 11,
+      "target": "sofa",
+      "floor_y": 0.05631259083747864,
+      "start": [
+        3.6407265663146973,
+        0.05631259083747864,
+        -2.978907823562622
+      ],
+      "start_yaw": 1.3776576642169571,
+      "shortest_geodesic_m": 11.4,
+      "eligible_targets": {
+        "sofa": 11.4
+      },
+      "start_rooms": [
+        15,
+        16
+      ],
+      "episode_id": "sT4fr6TAbpF:v2s11",
+      "role": "validation"
+    },
+    {
+      "scene": "qoiz87JEwZ2",
+      "seed": 11,
+      "target": "sofa",
+      "floor_y": -3.0999975204467773,
+      "start": [
+        0.42209193110466003,
+        -3.0999975204467773,
+        -1.8483405113220215
+      ],
+      "start_yaw": 0.43961932669403536,
+      "shortest_geodesic_m": 14.654,
+      "eligible_targets": {
+        "sofa": 14.654
+      },
+      "start_rooms": [
+        7
+      ],
+      "episode_id": "qoiz87JEwZ2:v2s11",
+      "role": "validation"
+    },
+    {
+      "scene": "yqstnuAEVhm",
+      "seed": 12,
+      "target": "tv_monitor",
+      "floor_y": 3.2720448970794678,
+      "start": [
+        5.605363845825195,
+        3.2720448970794678,
+        1.9175970554351807
+      ],
+      "start_yaw": 2.737650459329915,
+      "shortest_geodesic_m": 10.281,
+      "eligible_targets": {
+        "tv_monitor": 10.281
+      },
+      "start_rooms": [
+        18
+      ],
+      "episode_id": "yqstnuAEVhm:v2s12",
+      "role": "validation"
+    },
+    {
+      "scene": "r47D5H71a5s",
+      "seed": 12,
+      "target": "bed",
+      "floor_y": 0.0986330509185791,
+      "start": [
+        -5.217332363128662,
+        0.0986330509185791,
+        -10.469941139221191
+      ],
+      "start_yaw": -2.496116178096937,
+      "shortest_geodesic_m": 11.473,
+      "eligible_targets": {
+        "bed": 11.473,
+        "plant": 10.521
+      },
+      "start_rooms": [
+        17
+      ],
+      "episode_id": "r47D5H71a5s:v2s12",
+      "role": "validation"
+    },
+    {
+      "scene": "sT4fr6TAbpF",
+      "seed": 12,
+      "target": "sofa",
+      "floor_y": 0.05631259083747864,
+      "start": [
+        -2.5772793292999268,
+        0.05631259083747864,
+        -21.12533187866211
+      ],
+      "start_yaw": -2.618023721715133,
+      "shortest_geodesic_m": 15.284,
+      "eligible_targets": {
+        "toilet": 25.233,
+        "sofa": 15.284
+      },
+      "start_rooms": [
+        10
+      ],
+      "episode_id": "sT4fr6TAbpF:v2s12",
+      "role": "validation"
+    },
+    {
+      "scene": "qoiz87JEwZ2",
+      "seed": 12,
+      "target": "sofa",
+      "floor_y": 0.3000028133392334,
+      "start": [
+        -4.369030475616455,
+        0.3000028133392334,
+        -10.505070686340332
+      ],
+      "start_yaw": 0.00038021659507236905,
+      "shortest_geodesic_m": 10.374,
+      "eligible_targets": {
+        "sofa": 10.374
+      },
+      "start_rooms": [
+        9
+      ],
+      "episode_id": "qoiz87JEwZ2:v2s12",
+      "role": "validation"
+    },
+    {
+      "scene": "oLBMNvg9in8",
+      "seed": 12,
+      "target": "toilet",
+      "floor_y": 3.0099966526031494,
+      "start": [
+        5.167971611022949,
+        3.0099966526031494,
+        -3.5118188858032227
+      ],
+      "start_yaw": -2.1128995980113245,
+      "shortest_geodesic_m": 10.031,
+      "eligible_targets": {
+        "toilet": 10.031
+      },
+      "start_rooms": [
+        23
+      ],
+      "episode_id": "oLBMNvg9in8:v2s12",
+      "role": "validation"
+    }
+  ],
+  "skipped": [
+    {
+      "scene": "oLBMNvg9in8",
+      "seed": 10
+    },
+    {
+      "scene": "cV4RVeZvu5T",
+      "seed": 10
+    },
+    {
+      "scene": "oLBMNvg9in8",
+      "seed": 11
+    },
+    {
+      "scene": "cV4RVeZvu5T",
+      "seed": 11
+    },
+    {
+      "scene": "cV4RVeZvu5T",
+      "seed": 12
+    }
+  ]
+}

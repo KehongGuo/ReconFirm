@@ -50,7 +50,11 @@ def merge(a, b):
     return out
 
 
-def environment(cfg):
+def verifier_of(cfg, cond):
+    return CONDITIONS[cond].get('verifier') or cfg['verifier'].get('model')
+
+
+def environment(cfg, cond):
     env = dict(os.environ)
     here = lambda p: str(ROOT / p)               # relative paths are relative to the repository
     env.update({'SCOUT_MP3D_ROOT': here(cfg['data']['mp3d_root']), 'SCOUT_HM3D_ROOT': here(cfg['data']['hm3d_root']),
@@ -60,8 +64,9 @@ def environment(cfg):
     for key, var in (('key_file', 'TYPESAFE_API_KEY_FILE'), ('log', 'SCOUT_JEV_LOG'), ('pin_addrs', 'SCOUT_JEV_ADDRS')):
         if cfg['judge'].get(key):
             env[var] = here(cfg['judge'][key]) if key != 'pin_addrs' else str(cfg['judge'][key])
-    if cfg['verifier'].get('model'):
-        env['SCOUT_VERIFIER_MODEL'] = cfg['verifier']['model']
+    env.pop('SCOUT_VERIFIER_MODEL', None)
+    if verifier_of(cfg, cond):
+        env['SCOUT_VERIFIER_MODEL'] = verifier_of(cfg, cond)
     if cfg.get('save_crops'):
         env['SCOUT_CROPS'] = '1'
     if cfg.get('gpu') is not None:
@@ -75,19 +80,21 @@ def command(cfg, cond, episode_id, out):
     cmd = [sys.executable, str(entry), '--episodes', str(ROOT / cfg['episodes']), '--episode-id', episode_id,
            '--allocation', c['allocation'], '--drone-local', c['drone_local'], '--dog-local', c['dog_local'],
            '--clock', c['clock'], '--scheduler', cfg['scheduler'], '--mission-s', str(cfg['mission_s']),
-           '--localize', cfg['localize'], '--out', str(out)]
-    if 'jev' in (c['allocation'], c['drone_local'], c['dog_local']):
+           '--localize', cfg['localize'], '--out', str(out), '--frontier-cost', c.get('frontier_cost', 'rank'),
+           '--dog-explores', 'yes' if cfg.get('dog_explores', True) else 'no']
+    if 'jev' in (c['allocation'], c['drone_local'], c['dog_local']) or c.get('frontier_cost') == 'pt':
         cmd.append('--allow-paid-inference')
-    if cfg['memory'].get('store'):
-        cmd += ['--experience', str(ROOT / cfg['memory']['store'])] + (['--experience-learn'] if cfg['memory'].get('learn') else [])
+    store = c.get('memory') or cfg['memory'].get('store')       # a condition's own frozen memory (Ours + RSI) first
+    if store:
+        cmd += ['--experience', str(ROOT / store)] + (['--experience-learn'] if cfg['memory'].get('learn') else [])
     if cfg.get('video'):
         cmd.append('--video')
     return cmd
 
 
-def run_mission(cfg, cmd, run, env, crashes, aside, note):
+def run_mission(cfg, cmd, run, env, crashes, aside, note, verifier=None):
     """One mission in its own process -> 'done', 'crash' or 'service_error' (moved aside for a rerun)."""
-    while not vlm_up(cfg['vlm']['url']):
+    while not vlm_up(cfg['vlm']['url'], verifier):
         note(f"waiting for the VLM server at {cfg['vlm']['url']}")
         time.sleep(30)
     shutil.rmtree(run, ignore_errors=True)
@@ -107,13 +114,14 @@ def run_mission(cfg, cmd, run, env, crashes, aside, note):
     return 'done'
 
 
-def vlm_up(url):
+def vlm_up(url, verifier=None):
+    """The server answers, and serves the evolved verifier when the mission needs one."""
     import urllib.request
     try:
-        urllib.request.urlopen(url + '/v1/models', timeout=5).read()
-        return True
+        body = urllib.request.urlopen(url + '/v1/models', timeout=5).read().decode()
     except Exception:
         return False
+    return not verifier or f'"{verifier}"' in body
 
 
 def main():
@@ -130,10 +138,15 @@ def main():
         raise SystemExit(f'unknown conditions {unknown}; see configs/conditions.yaml')
     episodes = json.loads((ROOT / cfg['episodes']).read_text())['episodes']
     ids = [e['episode_id'] for e in episodes] if cfg['episode_ids'] == 'all' else list(cfg['episode_ids'])
+    if cfg.get('scenes'):                        # only these scenes (e.g. the ones whose sim fits on this GPU)
+        ids = [e for e in ids if e.split(':')[0] in cfg['scenes']]
+    ids = [e for e in ids if e.split(':')[0] not in (cfg.get('skip_scenes') or [])]
+    if cfg.get('order') == 'reverse':            # a second machine takes the shared queue from the back
+        ids = ids[::-1]
     top = ROOT / 'out' / cfg['experiment']
     top.mkdir(parents=True, exist_ok=True)
     (top / 'config.yaml').write_text(yaml.safe_dump(cfg, sort_keys=False))
-    env, log = environment(cfg), top / 'run.log'
+    log = top / 'run.log'
 
     def note(msg):
         with open(log, 'a') as fh:
@@ -143,7 +156,7 @@ def main():
     for p in range(1, cfg['passes'] + 1):
         out = top / f'p{p}' if cfg['passes'] > 1 else top
         out.mkdir(exist_ok=True)
-        for attempt_round in range(2):           # the second round retries crashed / moved-aside missions
+        for attempt_round in range(1 if a.dry_run else 2):   # the second round retries crashed / moved-aside missions
             for episode_id in ids:
                 for cond in cfg['conditions']:
                     if (top / 'STOP').exists():
@@ -167,7 +180,8 @@ def main():
                             continue                     # another runner has it
                         if (run / 'summary.json').exists():
                             continue                     # it finished while we looked
-                        outcome = run_mission(cfg, cmd, run, env, crashes, aside, note)
+                        outcome = run_mission(cfg, cmd, run, environment(cfg, cond), crashes, aside, note,
+                                              verifier_of(cfg, cond))
                     if outcome == 'service_error':
                         service_run += 1
                         if service_run >= 3:

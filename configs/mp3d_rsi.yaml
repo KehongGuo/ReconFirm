@@ -1,0 +1,5 @@
+# Ours + RSI on the MP3D test set: a frozen case memory (memory/frozen.json) and the evolved verifier `r1`, a LoRA
+# served beside the base (scripts/serve_vllm.sh with LORA=1; tools/verifier_evolve.py load). A LoRA server leaves no
+# room for a sim on its card: the server on one GPU, gpu=<the other>.
+base: mp3d_table.yaml
+conditions: [ours_rsi]

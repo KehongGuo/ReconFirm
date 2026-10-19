@@ -8,6 +8,10 @@ episodes: data/episodes/team_episodes_v2_test.json
 episode_ids: all               # all, or a list of episode ids ("<scene>:<id>")
 conditions: [ours]             # names from configs/conditions.yaml
 passes: 1                      # repeat the whole set; table.py averages the passes
+scenes: null                   # only these scenes (null: all)
+skip_scenes: []                # leave these scenes to other runners (a sim that does not fit beside vLLM here)
+order: forward                 # forward | reverse: a second runner/machine takes the shared queue from the back
+dog_explores: true             # false: the legged robot takes no frontiers, it moves only for a gated candidate
 
 mission_s: 150                 # mission horizon (s); model latency is charged to it unless the condition says free
 scheduler: hybrid              # hybrid: the VLM ranks and proposes, assignment routes (the paper's scheduler)

@@ -17,8 +17,8 @@ from pathlib import Path
 import numpy as np
 from scipy import stats
 
-ROWS = [('Frontier+Rules', 'frontier_rules'), ('VLM-Direct', 'vlm_direct'), ('Ours', 'ours'),
-        ('w/o gates (rules)', 'wo_gates'), ('w/o semantic scheduler', 'wo_semantic_scheduler'),
+ROWS = [('Frontier+Rules (Ours w/o gates)', 'frontier_rules'), ('VLM-Direct', 'vlm_direct'), ('Ours', 'ours'),
+        ('Ours + RSI', 'ours_rsi'), ('+ VLM scheduler', 'ours_semantic'),
         ('gates on legged only', 'gates_legged_only'), ('gates on drones only', 'gates_drones_only'),
         ('latency-free clock', 'latency_free')]
 OURS = 'ours'

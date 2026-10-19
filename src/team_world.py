@@ -39,6 +39,7 @@ DRONE_PITCH = -math.radians(15.0)
 DRONE_SPEED = 2.0
 DOG_SPEED = 1.0
 DOG_CAMERA = 0.5
+LOOK_PITCH_MAX = math.radians(35.0)   # head / body tilt of the legged robot for a look (looks only)
 RESOLUTION = 640          # 384 px left small objects 'too blurry' for the second opinion (HM3D val)
 HALF_EXTENT_CAP = 0.8
 CLOSE_VIEW_SLACK_M = 0.75
@@ -572,15 +573,32 @@ class TeamWorld:
         Used when the dog stands at a candidate but the detector has not fired on
         it from there (development runs: 44 of 59 verify trips to real targets ended with the
         dog in range and no crop to ask about). None if it is behind the camera or
-        off the image."""
+        off the image. A point in front but above or below the frame makes the legged robot tilt its head
+        (LOOK_PITCH_MAX) for this one frame: from its standoff a 0.5 m camera cannot see a wall-mounted TV, every
+        look came back None and the dog stood by a real TV until its trip timed out (MP3D aayBHfsNo7d:v2s23)."""
         from perception import crop_box
         k = next(i for i, sp in enumerate(self.specs) if sp.name == name)
         rgb = self.frames[k][f'{name}_rgb'] if self.frames is not None else None
         if rgb is None:
             return None
-        h, w = rgb.shape[:2]
+        aim = np.asarray(self.aim_point(name, track), dtype=np.float64)
+        box = self._look_box(name, k, aim, rgb.shape, track)
+        if box is None and name == DOG:
+            eye, _ = self.sim.camera_transform(name)
+            pitch = math.atan2(aim[1] - eye[1], math.hypot(aim[0] - eye[0], aim[2] - eye[2]))
+            pitch = max(-LOOK_PITCH_MAX, min(LOOK_PITCH_MAX, pitch))
+            if abs(pitch) > math.radians(5.0):
+                b = self.bodies[name]
+                self.sim.set_pose(name, np.array([b.x, self.floor_y, b.z], np.float32), yaw=b.yaw, pitch=pitch)
+                rgb = self.sim.sim.get_sensor_observations([k])[k][f'{name}_rgb']
+                box = self._look_box(name, k, aim, rgb.shape, track)
+                b.place()                      # level again
+        return None if box is None else crop_box(rgb, box)
+
+    def _look_box(self, name, k, aim, shape, track):
+        h, w = shape[:2]
         eye, R = self.sim.camera_transform(name)
-        cam = np.asarray(R).T @ (np.asarray(self.aim_point(name, track), dtype=np.float64) - eye)
+        cam = np.asarray(R).T @ (aim - eye)
         if cam[2] > -0.1:                      # the camera looks down -Z
             return None
         fx = (w / 2.0) / math.tan(math.radians(self.specs[k].hfov) / 2.0)
@@ -588,8 +606,7 @@ class TeamWorld:
         if not (0 <= cx < w and 0 <= cy < h):
             return None
         half = max(40.0, fx * max(self.half_extent(track), 0.25) / -cam[2])
-        box = (int(max(0, cx - half)), int(max(0, cy - half)), int(min(w, cx + half)), int(min(h, cy + half)))
-        return crop_box(rgb, box)
+        return (int(max(0, cx - half)), int(max(0, cy - half)), int(min(w, cx + half)), int(min(h, cy + half)))
 
     def can_declare(self, name):
         kind = 'dog' if name == DOG else 'drone'
